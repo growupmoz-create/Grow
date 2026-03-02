@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso RH - 50 Lições</title>
+
+<style>
+body{font-family:Arial;background:#f2f2f2;padding:20px}
+.container{background:white;padding:20px;border-radius:10px;max-width:900px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+button{background:#0066cc;color:white;border:none;padding:10px;margin-top:10px;width:100%;border-radius:5px;cursor:pointer}
+button:hover{background:#004c99}
+button:disabled{background:#999}
+input{width:100%;padding:8px;margin-top:10px}
+.progress{background:#ddd;height:20px;border-radius:10px;margin:10px 0}
+.progress-bar{height:20px;background:green;border-radius:10px;text-align:center;color:white;font-size:12px}
+.preview-img{width:100px;margin:5px;border-radius:5px}
+hr{margin:20px 0}
+.avaliacao-container{background:#f0f8ff;padding:15px;border-radius:8px;margin:10px 0}
+.pergunta{background:white;padding:10px;margin:10px 0;border-radius:5px;border-left:4px solid #0066cc}
+.alternativa{display:block;margin:5px 0;padding:5px;border:1px solid #ddd;border-radius:3px}
+.alternativa:hover{background:#f5f5f5}
+.temporizador{font-size:24px;text-align:center;color:#cc0000;font-weight:bold;margin:10px 0}
+.resultado{background:#e8f5e9;padding:20px;border-radius:8px;text-align:center;margin:20px 0}
+.aviso-avaliacao{background:#ffd700;padding:15px;border-radius:8px;text-align:center;margin:15px 0;font-weight:bold}
+.botao-avaliacao{background:#ff4444;font-size:18px;padding:15px}
+.botao-avaliacao:hover{background:#cc0000}
+.loading{text-align:center;padding:20px;font-size:18px;color:#666}
+</style>
+</head>
+<body>
+
+<div class="container" id="app"></div>
+
+<script>
+
+// 🔑 COLOQUE SUA API AQUI
+const OPENAI_API_KEY = "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";
+
+// ============================
+// 50 LIÇÕES
+// ============================
+const temas = [
+"O que é Recursos Humanos","Evolução do RH","Funções do RH","Ética no RH","RH em Moçambique",
+"Planeamento de RH","Descrição de cargos","Recrutamento","Entrevistas","Seleção",
+"Testes de seleção","Onboarding","Formação","Desenvolvimento de carreira","Avaliação de desempenho",
+"KPIs","Feedback","Remuneração","Benefícios","Equidade salarial",
+"Lei do Trabalho","Contratos","Jornada de trabalho","Regulamentos internos","Segurança no trabalho",
+"Negociação coletiva","Gestão de conflitos","Medidas disciplinares","Despedimento","Cultura organizacional",
+"Clima organizacional","RH digital","Sistemas de RH","Automatização","Proteção de dados",
+"Indicadores de RH","Relatórios","Tendências do RH","Compliance","Políticas internas",
+"Gestão de talentos","Retenção","Plano de carreira","Sucessão","Pesquisa salarial",
+"Mercado de trabalho","Ética corporativa","Responsabilidade social","Sustentabilidade","Projeto Final de RH"
+];
+
+// ============================
+// FUNÇÕES BASE
+// ============================
+
+function salvarAluno(a){
+localStorage.setItem("aluno", JSON.stringify(a));
+}
+
+function pegarAluno(){
+return JSON.parse(localStorage.getItem("aluno"));
+}
+
+// ============================
+// LOGIN
+// ============================
+
+function telaLogin(){
+document.getElementById("app").innerHTML=`
+<h2>Login do Estudante</h2>
+<input id="nome" placeholder="Nome completo">
+<input id="codigo" placeholder="Código do aluno">
+<button onclick="entrar()">Entrar</button>
+`;
+}
+
+function entrar(){
+let nome=document.getElementById("nome").value.trim();
+let codigo=document.getElementById("codigo").value.trim();
+
+if(!nome || !codigo){
+alert("Preencha todos os campos");
+return;
+}
+
+salvarAluno({
+nome,
+codigo,
+licaoAtual:1,
+resumoEnviado:false,
+fotos:[],
+avaliacoesRealizadas:[],
+resultados:[]
+});
+
+telaDashboard();
+}
+
+// ============================
+// DASHBOARD
+// ============================
+
+function telaDashboard(){
+let a=pegarAluno();
+if(!a){telaLogin();return;}
+
+let progresso=Math.floor(((a.licaoAtual-1)/temas.length)*100);
+
+document.getElementById("app").innerHTML=`
+<h2>Painel do Aluno</h2>
+<p><b>${a.nome}</b></p>
+<p>Lição ${a.licaoAtual} de ${temas.length}</p>
+
+<div class="progress">
+<div class="progress-bar" style="width:${progresso}%">${progresso}%</div>
+</div>
+
+<button onclick="telaLicao()">Continuar</button>
+<button onclick="logout()">Sair</button>
+`;
+}
+
+function logout(){
+localStorage.removeItem("aluno");
+telaLogin();
+}
+
+// ============================
+// VERIFICAR SE É LIÇÃO DE AVALIAÇÃO
+// ============================
+
+function isLicaoAvaliacao(licao){
+return licao === 16 || licao === 31 || licao === 46 || licao === 51;
+}
+
+function getTipoAvaliacao(licao){
+if(licao === 16) return {numero: 1, titulo: "Avaliação 1", inicio: 0, fim: 15};
+if(licao === 31) return {numero: 2, titulo: "Avaliação 2", inicio: 15, fim: 30};
+if(licao === 46) return {numero: 3, titulo: "Avaliação 3", inicio: 30, fim: 45};
+if(licao === 51) return {numero: 4, titulo: "Exame Geral", inicio: 0, fim: 50};
+return null;
+}
+
+function getLicoesAvaliacao(inicio, fim){
+let licoes = [];
+for(let i = inicio; i < fim; i++){
+licoes.push(temas[i]);
+}
+return licoes.join(", ");
+}
+
+function avaliacaoJaRealizada(licao){
+let a = pegarAluno();
+if(!a) return false;
+
+if(licao === 16) return a.avaliacoesRealizadas.includes(1);
+if(licao === 31) return a.avaliacoesRealizadas.includes(2);
+if(licao === 46) return a.avaliacoesRealizadas.includes(3);
+if(licao === 51) return a.avaliacoesRealizadas.includes(4);
+return false;
+}
+
+// ============================
+// GERAR PERGUNTAS 
+// ============================
+
+async function gerarPerguntasA(tipoAvaliacao) {
+let prompt = "";
+let licoes = "";
+
+if(tipoAvaliacao.numero === 1) {
+licoes = temas.slice(0, 15).join(", ");
+prompt = `Crie 20 perguntas de múltipla escolha sobre as seguintes lições de Recursos Humanos: ${licoes}. 
+Cada pergunta deve ter 4 alternativas (A, B, C, D) e indicar qual é a correta.
+Formato: 
+1. Pergunta: [texto]
+A) [alternativa]
+B) [alternativa] 
+C) [alternativa]
+D) [alternativa]
+Correta: [letra]`;
+}
+else if(tipoAvaliacao.numero === 2) {
+licoes = temas.slice(15, 30).join(", ");
+prompt = `Crie 20 perguntas de múltipla escolha sobre as seguintes lições de Recursos Humanos: ${licoes}.
+Cada pergunta deve ter 4 alternativas (A, B, C, D) e indicar qual é a correta.
+Formato: 
+1. Pergunta: [texto]
+A) [alternativa]
+B) [alternativa] 
+C) [alternativa]
+D) [alternativa]
+Correta: [letra]`;
+}
+else if(tipoAvaliacao.numero === 3) {
+licoes = temas.slice(30, 45).join(", ");
+prompt = `Crie 20 perguntas de múltipla escolha sobre as seguintes lições de Recursos Humanos: ${licoes}.
+Cada pergunta deve ter 4 alternativas (A, B, C, D) e indicar qual é a correta.
+Formato: 
+1. Pergunta: [texto]
+A) [alternativa]
+B) [alternativa] 
+C) [alternativa]
+D) [alternativa]
+Correta: [letra]`;
+}
+else if(tipoAvaliacao.numero === 4) {
+licoes = temas.join(", ");
+prompt = `Crie 20 perguntas de múltipla escolha sobre todas as lições de Recursos Humanos: ${licoes}.
+Cada pergunta deve ter 4 alternativas (A, B, C, D) e indicar qual é a correta.
+Formato: 
+1. Pergunta: [texto]
+A) [alternativa]
+B) [alternativa] 
+C) [alternativa]
+D) [alternativa]
+Correta: [letra]`;
+}
+
+document.getElementById("app").innerHTML = `
+<h2>${tipoAvaliacao.titulo}</h2>
+<div class="loading">Gerando perguntas... Aguarde...</div>
+`;
+
+try {
+const response = await fetch("https://api.openai.com/v1/chat/completions", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"Authorization": "Bearer " + OPENAI_API_KEY
+},
+body: JSON.stringify({
+model: "gpt-4o-mini",
+messages: [
+{role: "system", content: "Você é um professor de Recursos Humanos criando perguntas de avaliação."},
+{role: "user", content: prompt}
+],
+temperature: 0.7
+})
+});
+
+const data = await response.json();
+const textoPerguntas = data.choices[0].message.content;
+
+// Processar o texto das perguntas
+let perguntas = processarPerguntas(textoPerguntas);
+mostrarAvaliacao(perguntas, tipoAvaliacao);
+
+} catch (error) {
+console.error("Erro ao gerar perguntas:", error);
+document.getElementById("app").innerHTML = `
+<h2>${tipoAvaliacao.titulo}</h2>
+<div class="resultado" style="background:#ffebee">
+<p>Erro ao gerar perguntas. Usando perguntas padrão.</p>
+<button onclick="iniciarAvaliacaoPadrao(${tipoAvaliacao.numero})">Continuar com perguntas padrão</button>
+<button onclick="telaLicao()">Voltar</button>
+</div>
+`;
+}
+}
+
+function processarPerguntas(texto) {
+let perguntas = [];
+let linhas = texto.split('\n');
+let perguntaAtual = null;
+
+for(let linha of linhas) {
+linha = linha.trim();
+if(!linha) continue;
+
+// Nova pergunta
+if(linha.match(/^\d+\./)) {
+if(perguntaAtual) {
+perguntas.push(perguntaAtual);
+}
+perguntaAtual = {
+texto: linha.replace(/^\d+\.\s*Pergunta:\s*/, '').replace(/^\d+\.\s*/, ''),
+opcoes: [],
+correta: null
+};
+}
+// Alternativas
+else if(linha.match(/^[A-D]\)/)) {
+if(perguntaAtual) {
+perguntaAtual.opcoes.push(linha);
+}
+}
+// Resposta correta
+else if(linha.toLowerCase().includes('correta:')) {
+if(perguntaAtual) {
+let letra = linha.match(/[A-D]/)?.[0];
+if(letra) {
+perguntaAtual.correta = letra.charCodeAt(0) - 65; // A=0, B=1, etc.
+}
+}
+}
+}
+
+if(perguntaAtual) {
+perguntas.push(perguntaAtual);
+}
+
+// Garantir 20 perguntas
+while(perguntas.length < 20) {
+perguntas.push({
+texto: `Pergunta padrão ${perguntas.length+1} sobre RH`,
+opcoes: ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
+correta: 0
+});
+}
+
+return perguntas.slice(0, 20);
+}
+
+function mostrarAvaliacao(perguntas, tipoAvaliacao) {
+document.getElementById("app").innerHTML = `
+<h2>${tipoAvaliacao.titulo}</h2>
+<p>Duração: 30 minutos | 20 perguntas | Total: 20 valores</p>
+<div class="temporizador" id="temporizador">30:00</div>
+<div class="avaliacao-container" id="perguntas"></div>
+<button onclick="finalizarAvaliacao(${tipoAvaliacao.numero})">Finalizar Avaliação</button>
+<button onclick="cancelarAvaliacao()">Cancelar</button>
+`;
+
+let container = document.getElementById("perguntas");
+perguntas.forEach((p, idx) => {
+container.innerHTML += `
+<div class="pergunta">
+<p><strong>${idx+1}. ${p.texto}</strong></p>
+${p.opcoes.map((op, oIdx) => `
+<label class="alternativa">
+<input type="radio" name="pergunta${idx}" value="${oIdx}"> ${op}
+</label>
+`).join('')}
+</div>
+`;
+});
+
+// Salvar perguntas para correção
+window.perguntasAtuais = perguntas;
+iniciarTemporizador(30 * 60, tipoAvaliacao.numero);
+}
+
+// ============================
+// LIÇÃO
+// ============================
+
+function telaLicao(){
+let a=pegarAluno();
+if(!a){telaLogin();return;}
+
+let tema=temas[a.licaoAtual-1];
+let isAvaliacao = isLicaoAvaliacao(a.licaoAtual);
+let avaliacaoJaFeita = avaliacaoJaRealizada(a.licaoAtual);
+let tipoAvaliacao = getTipoAvaliacao(a.licaoAtual);
+
+// Se for lição de avaliação e ainda não foi feita, mostrar botão especial
+if(isAvaliacao && !avaliacaoJaFeita){
+let licoes = "";
+if(tipoAvaliacao.numero === 1) licoes = "lições 1 a 15";
+else if(tipoAvaliacao.numero === 2) licoes = "lições 16 a 30";
+else if(tipoAvaliacao.numero === 3) licoes = "lições 31 a 45";
+else if(tipoAvaliacao.numero === 4) licoes = "todas as lições (1 a 50)";
+
+document.getElementById("app").innerHTML=`
+<h2>${tipoAvaliacao.titulo}</h2>
+<p>Lição ${a.licaoAtual}: ${tema}</p>
+
+<div class="aviso-avaliacao">
+⚠️ ATENÇÃO: Esta é uma avaliação sobre ${licoes}!
+</div>
+
+<div class="avaliacao-container">
+<p><strong>Regras da Avaliação:</strong></p>
+<ul>
+<li>Duração: 30 minutos</li>
+<li>20 perguntas geradas por IA</li>
+<li>Valor total: 20 valores</li>
+<li>Resultado enviado para WhatsApp</li>
+<li>Necessário nota mínima 10 para avançar</li>
+</ul>
+</div>
+
+<button class="botao-avaliacao" onclick="gerarPerguntas(${JSON.stringify(tipoAvaliacao).replace(/"/g, '&quot;')})">
+▶ INICIAR ${tipoAvaliacao.titulo.toUpperCase()} ◀
+</button>
+
+<button onclick="telaDashboard()">Voltar ao Painel</button>
+`;
+return;
+}
+
+// Se já fez a avaliação, mostrar mensagem
+if(isAvaliacao && avaliacaoJaFeita){
+let resultado = a.resultados.find(r => r.avaliacao === tipoAvaliacao.numero);
+document.getElementById("app").innerHTML=`
+<h2>${tipoAvaliacao.titulo}</h2>
+<p>Lição ${a.licaoAtual}: ${tema}</p>
+
+<div class="resultado">
+<p><strong>✓ Avaliação já realizada</strong></p>
+<p>Sua nota: ${resultado ? resultado.nota : '?'}/20 valores</p>
+<p>Data: ${resultado ? resultado.data : '?'}</p>
+</div>
+
+<button onclick="continuar()">Continuar para Próxima Lição</button>
+<button onclick="telaDashboard()">Voltar ao Painel</button>
+`;
+return;
+}
+
+// Lição normal (sem avaliação)
+document.getElementById("app").innerHTML=`
+<h2>Lição ${a.licaoAtual}: ${tema}</h2>
+
+<div id="conteudo"></div>
+<button onclick="gerarConteudo()">Gerar Conteúdo</button>
+
+<hr>
+
+<h3>Enviar resumo (1 a 3 fotos)</h3>
+<input type="file" id="fotoInput" multiple accept="image/*" onchange="previewFotos()">
+<div id="preview"></div>
+
+<button onclick="enviarResumo()">Enviar Resumo</button>
+<button onclick="continuar()" ${!a.resumoEnviado?'disabled':''}>Continuar</button>
+<button onclick="telaDashboard()">Voltar</button>
+`;
+}
+
+// ============================
+// AVALIAÇÕES
+// ============================
+
+function iniciarTemporizador(segundos, numero){
+let timer = setInterval(() => {
+let mins = Math.floor(segundos / 60);
+let secs = segundos % 60;
+document.getElementById("temporizador").textContent = 
+`${mins}:${secs < 10 ? '0' : ''}${secs}`;
+segundos--;
+
+if(segundos < 0){
+clearInterval(timer);
+alert("⏰ Tempo esgotado!");
+finalizarAvaliacao(numero);
+}
+}, 1000);
+window.timerAtual = timer;
+}
+
+function finalizarAvaliacao(numero){
+if(window.timerAtual) clearInterval(window.timerAtual);
+
+// Calcular nota baseada nas respostas
+let respostasCorretas = 0;
+for(let i=0; i<20; i++){
+let resposta = document.querySelector(`input[name="pergunta${i}"]:checked`);
+if(resposta && window.perguntasAtuais && window.perguntasAtuais[i]) {
+if(parseInt(resposta.value) === window.perguntasAtuais[i].correta) {
+respostasCorretas++;
+}
+}
+}
+
+let nota = respostasCorretas; // Cada pergunta vale 1 valor
+let a = pegarAluno();
+
+// Registrar avaliação
+a.avaliacoesRealizadas.push(numero);
+if(!a.resultados) a.resultados = [];
+a.resultados.push({
+avaliacao: numero,
+nota: nota,
+data: new Date().toLocaleString(),
+respostasCorretas: respostasCorretas
+});
+
+// Enviar para WhatsApp
+let titulo = numero === 4 ? "Exame Geral" : "Avaliação "+numero;
+let mensagem = `*Resultado de ${titulo} - Curso RH*%0A%0A`;
+mensagem += `👤 Aluno: ${a.nome}%0A`;
+mensagem += `🆔 Código: ${a.codigo}%0A`;
+mensagem += `📝 Avaliação: ${titulo}%0A`;
+mensagem += `📊 Nota: ${nota}/20 valores%0A`;
+mensagem += `✅ Acertos: ${respostasCorretas}/20%0A`;
+mensagem += `📅 Data: ${new Date().toLocaleString()}%0A`;
+mensagem += `✅ Status: ${nota >= 10 ? 'APROVADO' : 'REPROVADO'}`;
+
+window.open(`https://wa.me/842044879?text=${mensagem}`, '_blank');
+
+salvarAluno(a);
+
+document.getElementById("app").innerHTML=`
+<div class="resultado">
+<h2>${titulo} - Concluída</h2>
+<p><strong>Sua nota: ${nota}/20 valores</strong></p>
+<p>Acertos: ${respostasCorretas} de 20 perguntas</p>
+<p>Status: <strong style="color:${nota >= 10 ? 'green' : 'red'}">${nota >= 10 ? 'APROVADO' : 'REPROVADO'}</strong></p>
+<p>✅ Resultado enviado para WhatsApp 842044879</p>
+<button onclick="continuarAposAvaliacao()">Continuar Curso</button>
+</div>
+`;
+}
+
+function cancelarAvaliacao(){
+if(window.timerAtual) clearInterval(window.timerAtual);
+telaLicao();
+}
+
+function continuarAposAvaliacao(){
+let a = pegarAluno();
+a.licaoAtual++;
+a.resumoEnviado = false;
+a.fotos = [];
+salvarAluno(a);
+telaLicao();
+}
+
+// Fallback para perguntas padrão
+function iniciarAvaliacaoPadrao(numero){
+let titulos = ["Avaliação 1", "Avaliação 2", "Avaliação 3", "Exame Geral"];
+let titulo = titulos[numero-1];
+
+let perguntas = [];
+for(let i=1; i<=20; i++){
+perguntas.push({
+texto: `Pergunta ${i} sobre ${numero === 4 ? 'todo o conteúdo' : 'as lições específicas'}`,
+opcoes: ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
+correta: 0
+});
+}
+
+mostrarAvaliacao(perguntas, {numero, titulo});
+}
+
+// ============================
+// PREVIEW DE FOTOS
+// ============================
+
+function previewFotos(){
+let input=document.getElementById("fotoInput");
+let preview=document.getElementById("preview");
+preview.innerHTML="";
+
+if(input.files.length > 3){
+alert("Máximo 3 fotos.");
+input.value="";
+return;
+}
+
+for(let i=0;i<input.files.length;i++){
+let reader=new FileReader();
+reader.onload=function(e){
+let img=document.createElement("img");
+img.src=e.target.result;
+img.className="preview-img";
+preview.appendChild(img);
+};
+reader.readAsDataURL(input.files[i]);
+}
+}
+
+// ============================
+// ENVIAR RESUMO
+// ============================
+
+function enviarResumo(){
+let input=document.getElementById("fotoInput");
+
+if(input.files.length < 1){
+alert("Envie pelo menos 1 foto.");
+return;
+}
+
+if(input.files.length > 3){
+alert("Máximo 3 fotos.");
+return;
+}
+
+let fotosBase64=[];
+
+for(let i=0;i<input.files.length;i++){
+let reader=new FileReader();
+reader.onload=function(e){
+fotosBase64.push(e.target.result);
+
+if(fotosBase64.length === input.files.length){
+let a=pegarAluno();
+a.resumoEnviado=true;
+a.fotos=fotosBase64;
+salvarAluno(a);
+alert("Resumo enviado com sucesso!");
+telaLicao();
+}
+};
+reader.readAsDataURL(input.files[i]);
+}
+}
+
+// ============================
+// AVANÇAR
+// ============================
+
+function continuar(){
+let a=pegarAluno();
+
+if(!a.resumoEnviado){
+alert("Envie o resumo primeiro.");
+return;
+}
+
+if(a.licaoAtual < temas.length){
+a.licaoAtual++;
+a.resumoEnviado=false;
+a.fotos=[];
+salvarAluno(a);
+telaLicao();
+}else if(a.licaoAtual === temas.length){
+a.licaoAtual++; // Vai para 51 para ativar exame geral
+salvarAluno(a);
+telaLicao();
+}else{
+alert("Parabéns! Curso concluído!");
+localStorage.removeItem("aluno");
+telaLogin();
+}
+}
+
+// ============================
+// IA CONTEÚDO
+// ============================
+
+async function gerarConteudo(){
+let a=pegarAluno();
+let tema=temas[a.licaoAtual-1];
+
+document.getElementById("conteudo").innerText="Gerando conteúdo...";
+
+try{
+const r=await fetch("https://api.openai.com/v1/chat/completions",{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+"Authorization":"Bearer "+OPENAI_API_KEY
+},
+body:JSON.stringify({
+model:"gpt-4o-mini",
+messages:[
+{role:"system",content:"Você é formador de RH."},
+{role:"user",content:`Explique detalhadamente ${tema}`}
+]
+})
+});
+const d=await r.json();
+document.getElementById("conteudo").innerText=d.choices[0].message.content;
+}catch{
+document.getElementById("conteudo").innerText="Erro ao gerar conteúdo.";
+}
+}
+
+// ============================
+// INICIAR
+// ============================
+
+if(pegarAluno()){
+telaDashboard();
+}else{
+telaLogin();
+}
+
+</script>
+</body>
+</html>
