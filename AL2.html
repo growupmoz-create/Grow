@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2ª Avaliação - Armazenagem e Transportes</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.caixa{
+background:white;
+max-width:900px;
+margin:auto;
+padding:25px;
+border-radius:10px;
+}
+
+h1{
+text-align:center;
+}
+
+.pergunta{
+margin-top:20px;
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+background:#007bff;
+color:white;
+border:none;
+padding:15px;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+</style>
+
+<script>
+
+function corrigir(){
+
+var total = 0;
+
+var respostas = {
+
+q1:"b",
+q2:"b",
+q3:"b",
+q4:"b",
+q5:"b",
+q6:"b",
+q7:"b",
+q8:"b",
+q9:"b",
+q10:"b",
+q11:"b",
+q12:"b",
+q13:"b",
+q14:"b",
+q15:"b",
+q16:"b",
+q17:"b",
+q18:"b",
+q19:"b",
+q20:"b"
+
+};
+
+for(var i=1;i<=20;i++){
+
+var r = document.querySelector('input[name="q'+i+'"]:checked');
+
+if(r && r.value == respostas["q"+i]){
+total++;
+}
+
+}
+
+var nome = document.getElementById("nome").value;
+var numero = document.getElementById("numero").value;
+
+var mensagem =
+"2ª Avaliação Logística%0A"+
+"Nome: "+nome+"%0A"+
+"Número: "+numero+"%0A"+
+"Pontuação: "+total+" / 20";
+
+var link = "https://wa.me/258842044879?text="+mensagem;
+
+window.open(link);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="caixa">
+
+<h1>2ª Avaliação: Armazenagem e Transportes</h1>
+
+<p><b>Duração:</b> 40 minutos</p>
+
+<p>
+Nome:<br>
+<input type="text" id="nome">
+</p>
+
+<p>
+Número:<br>
+<input type="text" id="numero">
+</p>
+
+
+<div class="pergunta">
+1. Sistema Cross-docking impacta em:<br>
+<label><input type="radio" name="q1" value="a"> a) Aumento do tempo no armazém</label><br>
+<label><input type="radio" name="q1" value="b"> b) Redução custos manuseio e espaço</label><br>
+<label><input type="radio" name="q1" value="c"> c) Proteção contra humidade</label><br>
+<label><input type="radio" name="q1" value="d"> d) Apenas transporte ferroviário</label>
+</div>
+
+<div class="pergunta">
+2. Vantagem transporte ferroviário Nacala:<br>
+<label><input type="radio" name="q2" value="a"> a) Flexibilidade porta-a-porta</label><br>
+<label><input type="radio" name="q2" value="b"> b) Menor custo por tonelada</label><br>
+<label><input type="radio" name="q2" value="c"> c) Mais rápido pequenas cargas</label><br>
+<label><input type="radio" name="q2" value="d"> d) Sem taxas portuárias</label>
+</div>
+
+<div class="pergunta">
+3. Picking significa:<br>
+<label><input type="radio" name="q3" value="a"> a) Descarregar contentores</label><br>
+<label><input type="radio" name="q3" value="b"> b) Separar itens do pedido</label><br>
+<label><input type="radio" name="q3" value="c"> c) Inventário anual</label><br>
+<label><input type="radio" name="q3" value="d"> d) Etiquetar preços</label>
+</div>
+
+<div class="pergunta">
+4. Backhaul mal planeado causa:<br>
+<label><input type="radio" name="q4" value="a"> a) Mais lucro</label><br>
+<label><input type="radio" name="q4" value="b"> b) Camiões vazios</label><br>
+<label><input type="radio" name="q4" value="c"> c) Menos desgaste pneus</label><br>
+<label><input type="radio" name="q4" value="d"> d) Melhor trânsito</label>
+</div>
+
+<div class="pergunta">
+5. Critério transporte aéreo urgente:<br>
+<label><input type="radio" name="q5" value="a"> a) Baixo custo</label><br>
+<label><input type="radio" name="q5" value="b"> b) Redução do lead time</label><br>
+<label><input type="radio" name="q5" value="c"> c) Granéis sólidos</label><br>
+<label><input type="radio" name="q5" value="d"> d) Consolidação classe C</label>
+</div>
+
+<div class="pergunta">
+6. Sistema Kaizen no armazém:<br>
+<label><input type="radio" name="q6" value="a"> a) Mais guardas</label><br>
+<label><input type="radio" name="q6" value="b"> b) Melhoria contínua layout</label><br>
+<label><input type="radio" name="q6" value="c"> c) Apenas produtos importados</label><br>
+<label><input type="radio" name="q6" value="d"> d) Robôs substituem humanos</label>
+</div>
+
+<div class="pergunta">
+7. Diferença LCL e FCL:<br>
+<label><input type="radio" name="q7" value="a"> a) LCL mais rápido</label><br>
+<label><input type="radio" name="q7" value="b"> b) LCL partilha contentor</label><br>
+<label><input type="radio" name="q7" value="c"> c) FCL sem taxas</label><br>
+<label><input type="radio" name="q7" value="d"> d) LCL obrigatório perecíveis</label>
+</div>
+
+<div class="pergunta">
+8. Corredores estreitos risco:<br>
+<label><input type="radio" name="q8" value="a"> a) Redução capital</label><br>
+<label><input type="radio" name="q8" value="b"> b) Mais acidentes</label><br>
+<label><input type="radio" name="q8" value="c"> c) Melhor ventilação</label><br>
+<label><input type="radio" name="q8" value="d"> d) Facilita inventário</label>
+</div>
+
+<div class="pergunta">
+9. Custo ocupação armazém:<br>
+<label><input type="radio" name="q9" value="a"> a) Combustível empilhadora</label><br>
+<label><input type="radio" name="q9" value="b"> b) Renda, seguros, eletricidade</label><br>
+<label><input type="radio" name="q9" value="c"> c) Lucro cessante</label><br>
+<label><input type="radio" name="q9" value="d"> d) Salário diretor</label>
+</div>
+
+<div class="pergunta">
+10. Unitização de carga:<br>
+<label><input type="radio" name="q10" value="a"> a) Demorar carregamento</label><br>
+<label><input type="radio" name="q10" value="b"> b) Facilitar movimentação</label><br>
+<label><input type="radio" name="q10" value="c"> c) Esconder avarias</label><br>
+<label><input type="radio" name="q10" value="d"> d) Substituir código barras</label>
+</div>
+
+<div class="pergunta">
+11. Transporte intermodal exige:<br>
+<label><input type="radio" name="q11" value="a"> a) Contrato por km</label><br>
+<label><input type="radio" name="q11" value="b"> b) Contentores padronizados</label><br>
+<label><input type="radio" name="q11" value="c"> c) Desempacotar carga</label><br>
+<label><input type="radio" name="q11" value="d"> d) Cancelar seguro</label>
+</div>
+
+<div class="pergunta">
+12. Lead time instável causa:<br>
+<label><input type="radio" name="q12" value="a"> a) Reduz estoque segurança</label><br>
+<label><input type="radio" name="q12" value="b"> b) Dificulta previsão vendas</label><br>
+<label><input type="radio" name="q12" value="c"> c) Reduz custo estoque</label><br>
+<label><input type="radio" name="q12" value="d"> d) Melhor serviço</label>
+</div>
+
+<div class="pergunta">
+13. Itens Classe A ficam:<br>
+<label><input type="radio" name="q13" value="a"> a) Mais distantes</label><br>
+<label><input type="radio" name="q13" value="b"> b) Perto expedição</label><br>
+<label><input type="radio" name="q13" value="c"> c) Fora armazém</label><br>
+<label><input type="radio" name="q13" value="d"> d) Apenas prateleiras vermelhas</label>
+</div>
+
+<div class="pergunta">
+14. TMS ajuda a:<br>
+<label><input type="radio" name="q14" value="a"> a) Substituir motoristas</label><br>
+<label><input type="radio" name="q14" value="b"> b) Otimizar rotas</label><br>
+<label><input type="radio" name="q14" value="c"> c) Eliminar portagens</label><br>
+<label><input type="radio" name="q14" value="d"> d) Aumentar velocidade legal</label>
+</div>
+
+<div class="pergunta">
+15. FIFO alimentos serve para:<br>
+<label><input type="radio" name="q15" value="a"> a) Produtos caros primeiro</label><br>
+<label><input type="radio" name="q15" value="b"> b) Evitar vencimento</label><br>
+<label><input type="radio" name="q15" value="c"> c) Reduzir trabalhadores</label><br>
+<label><input type="radio" name="q15" value="d"> d) Substituir refrigeração</label>
+</div>
+
+<div class="pergunta">
+16. Desvantagem cabotagem Maputo-Pemba:<br>
+<label><input type="radio" name="q16" value="a"> a) Combustível caro</label><br>
+<label><input type="radio" name="q16" value="b"> b) Tempo trânsito elevado</label><br>
+<label><input type="radio" name="q16" value="c"> c) Não transporta contentores</label><br>
+<label><input type="radio" name="q16" value="d"> d) Escolta militar</label>
+</div>
+
+<div class="pergunta">
+17. Centro de distribuição:<br>
+<label><input type="radio" name="q17" value="a"> a) Guardar sucata</label><br>
+<label><input type="radio" name="q17" value="b"> b) Fluxo rápido distribuição</label><br>
+<label><input type="radio" name="q17" value="c"> c) Sem camiões</label><br>
+<label><input type="radio" name="q17" value="d"> d) Apenas governo</label>
+</div>
+
+<div class="pergunta">
+18. Empty Miles significa:<br>
+<label><input type="radio" name="q18" value="a"> a) Estradas terra</label><br>
+<label><input type="radio" name="q18" value="b"> b) Veículo vazio</label><br>
+<label><input type="radio" name="q18" value="c"> c) Distância fronteira</label><br>
+<label><input type="radio" name="q18" value="d"> d) Excesso velocidade</label>
+</div>
+
+<div class="pergunta">
+19. WMS faz:<br>
+<label><input type="radio" name="q19" value="a"> a) Prateleiras virtuais</label><br>
+<label><input type="radio" name="q19" value="b"> b) Registar movimentos estoque</label><br>
+<label><input type="radio" name="q19" value="c"> c) Garantir energia</label><br>
+<label><input type="radio" name="q19" value="d"> d) Valor revenda</label>
+</div>
+
+<div class="pergunta">
+20. Cargas perigosas exigem:<br>
+<label><input type="radio" name="q20" value="a"> a) Carta normal</label><br>
+<label><input type="radio" name="q20" value="b"> b) Sinalização e motorista treinado</label><br>
+<label><input type="radio" name="q20" value="c"> c) Viajar nas chuvas</label><br>
+<label><input type="radio" name="q20" value="d"> d) Ocultar carga</label>
+</div>
+
+<button onclick="corrigir()">Enviar Resultado para WhatsApp</button>
+
+</div>
+
+</body>
+</html>

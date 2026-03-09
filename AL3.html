@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3ª Avaliação - Logística Internacional e Alfândegas</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.caixa{
+background:white;
+max-width:900px;
+margin:auto;
+padding:25px;
+border-radius:10px;
+}
+
+h1{
+text-align:center;
+}
+
+.pergunta{
+margin-top:20px;
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+background:#28a745;
+color:white;
+border:none;
+padding:15px;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+</style>
+
+<script>
+
+function corrigir(){
+
+var total = 0;
+
+var respostas = {
+
+q1:"b",
+q2:"b",
+q3:"b",
+q4:"b",
+q5:"b",
+q6:"a",
+q7:"b",
+q8:"b",
+q9:"b",
+q10:"b",
+q11:"c",
+q12:"b",
+q13:"a",
+q14:"b",
+q15:"a",
+q16:"b",
+q17:"b",
+q18:"b",
+q19:"b",
+q20:"b"
+
+};
+
+for(var i=1;i<=20;i++){
+
+var r = document.querySelector('input[name="q'+i+'"]:checked');
+
+if(r && r.value == respostas["q"+i]){
+total++;
+}
+
+}
+
+var nome = document.getElementById("nome").value;
+var numero = document.getElementById("numero").value;
+
+var mensagem =
+"3ª Avaliação Logística Internacional%0A"+
+"Nome: "+nome+"%0A"+
+"Número: "+numero+"%0A"+
+"Pontuação: "+total+" / 20";
+
+var link = "https://wa.me/258842044879?text="+mensagem;
+
+window.open(link);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="caixa">
+
+<h1>3ª Avaliação: Logística Internacional e Alfândegas</h1>
+
+<p><b>Duração:</b> 40 minutos</p>
+
+<p>
+Nome:<br>
+<input type="text" id="nome">
+</p>
+
+<p>
+Número:<br>
+<input type="text" id="numero">
+</p>
+
+<div class="pergunta">
+1. Incoterm EXW significa:<br>
+<label><input type="radio" name="q1" value="a"> a) Desalfandegamento exportação</label><br>
+<label><input type="radio" name="q1" value="b"> b) Mercadoria disponível nas instalações do vendedor</label><br>
+<label><input type="radio" name="q1" value="c"> c) Frete até Maputo</label><br>
+<label><input type="radio" name="q1" value="d"> d) Carregar obrigatoriamente no camião</label>
+</div>
+
+<div class="pergunta">
+2. Bill of Lading serve para:<br>
+<label><input type="radio" name="q2" value="a"> a) Lista de preços</label><br>
+<label><input type="radio" name="q2" value="b"> b) Título de posse, recibo e contrato</label><br>
+<label><input type="radio" name="q2" value="c"> c) Substituir impostos</label><br>
+<label><input type="radio" name="q2" value="d"> d) Mostrar apenas peso</label>
+</div>
+
+<div class="pergunta">
+3. Sistema JUE serve para:<br>
+<label><input type="radio" name="q3" value="a"> a) Mais papel</label><br>
+<label><input type="radio" name="q3" value="b"> b) Digitalizar desembaraço aduaneiro</label><br>
+<label><input type="radio" name="q3" value="c"> c) Eliminar inspeções</label><br>
+<label><input type="radio" name="q3" value="d"> d) Não pagar IVA</label>
+</div>
+
+<div class="pergunta">
+4. Incoterm DDP paga impostos:<br>
+<label><input type="radio" name="q4" value="a"> a) Importador</label><br>
+<label><input type="radio" name="q4" value="b"> b) Vendedor</label><br>
+<label><input type="radio" name="q4" value="c"> c) Despachante</label><br>
+<label><input type="radio" name="q4" value="d"> d) Estado</label>
+</div>
+
+<div class="pergunta">
+5. Código SH representa:<br>
+<label><input type="radio" name="q5" value="a"> a) Telefone exportador</label><br>
+<label><input type="radio" name="q5" value="b"> b) Classificação internacional mercadorias</label><br>
+<label><input type="radio" name="q5" value="c"> c) GPS contentor</label><br>
+<label><input type="radio" name="q5" value="d"> d) Conta bancária</label>
+</div>
+
+<div class="pergunta">
+6. Diferença CFR e CIF:<br>
+<label><input type="radio" name="q6" value="a"> a) CIF inclui seguro</label><br>
+<label><input type="radio" name="q6" value="b"> b) CFR apenas aéreo</label><br>
+<label><input type="radio" name="q6" value="c"> c) Risco passa no destino</label><br>
+<label><input type="radio" name="q6" value="d"> d) São iguais</label>
+</div>
+
+<div class="pergunta">
+7. Trânsito aduaneiro ocorre quando:<br>
+<label><input type="radio" name="q7" value="a"> a) Venda local</label><br>
+<label><input type="radio" name="q7" value="b"> b) Carga passa por Moçambique para outro país</label><br>
+<label><input type="radio" name="q7" value="c"> c) Devolução</label><br>
+<label><input type="radio" name="q7" value="d"> d) Falta documentos</label>
+</div>
+
+<div class="pergunta">
+8. Fatura Pró-forma:<br>
+<label><input type="radio" name="q8" value="a"> a) Fatura final</label><br>
+<label><input type="radio" name="q8" value="b"> b) Documento provisório para cotação</label><br>
+<label><input type="radio" name="q8" value="c"> c) Recibo banco</label><br>
+<label><input type="radio" name="q8" value="d"> d) Certificado origem</label>
+</div>
+
+<div class="pergunta">
+9. Canal vermelho significa:<br>
+<label><input type="radio" name="q9" value="a"> a) Liberação automática</label><br>
+<label><input type="radio" name="q9" value="b"> b) Inspeção documental e física</label><br>
+<label><input type="radio" name="q9" value="c"> c) Apenas documentos</label><br>
+<label><input type="radio" name="q9" value="d"> d) Destruição</label>
+</div>
+
+<div class="pergunta">
+10. Seguro All Risks cobre:<br>
+<label><input type="radio" name="q10" value="a"> a) Guerra</label><br>
+<label><input type="radio" name="q10" value="b"> b) Danos e perdas acidentais</label><br>
+<label><input type="radio" name="q10" value="c"> c) Greves</label><br>
+<label><input type="radio" name="q10" value="d"> d) Lucro perdido</label>
+</div>
+
+<div class="pergunta">
+11. FOB risco passa quando:<br>
+<label><input type="radio" name="q11" value="a"> a) Sai da fábrica</label><br>
+<label><input type="radio" name="q11" value="b"> b) Armazém despachante</label><br>
+<label><input type="radio" name="q11" value="c"> c) Colocada a bordo do navio</label><br>
+<label><input type="radio" name="q11" value="d"> d) Porto destino</label>
+</div>
+
+<div class="pergunta">
+12. Certificado de Origem serve para:<br>
+<label><input type="radio" name="q12" value="a"> a) Provar frete</label><br>
+<label><input type="radio" name="q12" value="b"> b) Benefícios tarifários</label><br>
+<label><input type="radio" name="q12" value="c"> c) Identificar motorista</label><br>
+<label><input type="radio" name="q12" value="d"> d) Substituir fatura</label>
+</div>
+
+<div class="pergunta">
+13. Carta de Crédito garante:<br>
+<label><input type="radio" name="q13" value="a"> a) Pagamento se documentos corretos</label><br>
+<label><input type="radio" name="q13" value="b"> b) Pagar se gostar produto</label><br>
+<label><input type="radio" name="q13" value="c"> c) Isenção inspeção</label><br>
+<label><input type="radio" name="q13" value="d"> d) Gratuita</label>
+</div>
+
+<div class="pergunta">
+14. Valor Aduaneiro:<br>
+<label><input type="radio" name="q14" value="a"> a) Preço fábrica</label><br>
+<label><input type="radio" name="q14" value="b"> b) Base cálculo impostos CIF</label><br>
+<label><input type="radio" name="q14" value="c"> c) Preço Maputo</label><br>
+<label><input type="radio" name="q14" value="d"> d) Lucro esperado</label>
+</div>
+
+<div class="pergunta">
+15. Incoterm FCA:<br>
+<label><input type="radio" name="q15" value="a"> a) Entrega ao transportador indicado</label><br>
+<label><input type="radio" name="q15" value="b"> b) Pagar importação</label><br>
+<label><input type="radio" name="q15" value="c"> c) Entregar no porto destino</label><br>
+<label><input type="radio" name="q15" value="d"> d) Certificado conformidade</label>
+</div>
+
+<div class="pergunta">
+16. Despachante aduaneiro:<br>
+<label><input type="radio" name="q16" value="a"> a) Dono da carga</label><br>
+<label><input type="radio" name="q16" value="b"> b) Representa importador nas alfândegas</label><br>
+<label><input type="radio" name="q16" value="c"> c) Decide impostos</label><br>
+<label><input type="radio" name="q16" value="d"> d) Dono navios</label>
+</div>
+
+<div class="pergunta">
+17. Arrival Notice emitido por:<br>
+<label><input type="radio" name="q17" value="a"> a) Comprador</label><br>
+<label><input type="radio" name="q17" value="b"> b) Agente de navegação</label><br>
+<label><input type="radio" name="q17" value="c"> c) Alfândega</label><br>
+<label><input type="radio" name="q17" value="d"> d) Banco</label>
+</div>
+
+<div class="pergunta">
+18. Incoterm CPT usado para:<br>
+<label><input type="radio" name="q18" value="a"> a) Apenas marítimo</label><br>
+<label><input type="radio" name="q18" value="b"> b) Qualquer modal transporte</label><br>
+<label><input type="radio" name="q18" value="c"> c) Ferrovia Tete</label><br>
+<label><input type="radio" name="q18" value="d"> d) Bagagem</label>
+</div>
+
+<div class="pergunta">
+19. TEU significa:<br>
+<label><input type="radio" name="q19" value="a"> a) Terminal Exportação</label><br>
+<label><input type="radio" name="q19" value="b"> b) Contentor equivalente 20 pés</label><br>
+<label><input type="radio" name="q19" value="c"> c) Transporte urgente</label><br>
+<label><input type="radio" name="q19" value="d"> d) Taxa embarque</label>
+</div>
+
+<div class="pergunta">
+20. Inspeção pré-embarque evita:<br>
+<label><input type="radio" name="q20" value="a"> a) Afundamento navio</label><br>
+<label><input type="radio" name="q20" value="b"> b) Fraudes qualidade e preço</label><br>
+<label><input type="radio" name="q20" value="c"> c) Mudança comprador</label><br>
+<label><input type="radio" name="q20" value="d"> d) Pagamento frete</label>
+</div>
+
+<button onclick="corrigir()">Enviar Resultado para WhatsApp</button>
+
+</div>
+
+</body>
+</html>

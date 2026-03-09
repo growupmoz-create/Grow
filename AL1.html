@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1ª Avaliação - Gestão de Estoque e Procurement</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.caixa{
+background:white;
+max-width:900px;
+margin:auto;
+padding:25px;
+border-radius:10px;
+}
+
+h1{
+text-align:center;
+}
+
+.pergunta{
+margin-top:20px;
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+background:#28a745;
+color:white;
+border:none;
+padding:15px;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+</style>
+
+<script>
+
+function corrigir(){
+
+var total = 0;
+
+var respostas = {
+q1:"b", q2:"b", q3:"b", q4:"b", q5:"b",
+q6:"b", q7:"a", q8:"b", q9:"b", q10:"b",
+q11:"b", q12:"b", q13:"b", q14:"b", q15:"b",
+q16:"b", q17:"b", q18:"b", q19:"b", q20:"b"
+};
+
+for(var i=1;i<=20;i++){
+
+var r = document.querySelector('input[name="q'+i+'"]:checked');
+
+if(r && r.value == respostas["q"+i]){
+total++;
+}
+
+}
+
+var nome = document.getElementById("nome").value;
+var numero = document.getElementById("numero").value;
+
+var mensagem =
+"Avaliação Logística%0A"+
+"Nome: "+nome+"%0A"+
+"Número: "+numero+"%0A"+
+"Pontuação: "+total+" / 20";
+
+var link = "https://wa.me/258842044879?text="+mensagem;
+
+window.open(link);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="caixa">
+
+<h1>1ª Avaliação: Gestão de Estoque e Procurement</h1>
+
+<p><b>Duração:</b> 40 minutos</p>
+
+<p>
+Nome:<br>
+<input type="text" id="nome" required>
+</p>
+
+<p>
+Número:<br>
+<input type="text" id="numero" required>
+</p>
+
+
+<div class="pergunta">
+1. Em uma análise de Curva ABC...<br>
+<label><input type="radio" name="q1" value="a"> a) Reduzir o estoque de segurança.</label><br>
+<label><input type="radio" name="q1" value="b"> b) Aplicar controle diário e contratos longos.</label><br>
+<label><input type="radio" name="q1" value="c"> c) Migrar itens para Classe C.</label><br>
+<label><input type="radio" name="q1" value="d"> d) Aumentar LEC.</label>
+</div>
+
+<div class="pergunta">
+2. Ao calcular o Custo Total de Propriedade (TCO)...<br>
+<label><input type="radio" name="q2" value="a"> a) Preço unitário.</label><br>
+<label><input type="radio" name="q2" value="b"> b) Custos aduaneiros e variação cambial.</label><br>
+<label><input type="radio" name="q2" value="c"> c) Embalagem.</label><br>
+<label><input type="radio" name="q2" value="d"> d) Margem do fornecedor.</label>
+</div>
+
+<div class="pergunta">
+3. Se a Acuracidade de Inventário é 75%...<br>
+<label><input type="radio" name="q3" value="a"> a) Melhoria de descontos.</label><br>
+<label><input type="radio" name="q3" value="b"> b) Pedidos desnecessários ou rupturas.</label><br>
+<label><input type="radio" name="q3" value="c"> c) Redução custo estoque.</label><br>
+<label><input type="radio" name="q3" value="d"> d) Aumento rotatividade.</label>
+</div>
+
+<div class="pergunta">
+4. Diferença JIT e JIC...<br>
+<label><input type="radio" name="q4" value="a"> a) JIT maximiza estoque.</label><br>
+<label><input type="radio" name="q4" value="b"> b) JIT elimina quase estoque segurança.</label><br>
+<label><input type="radio" name="q4" value="c"> c) JIC apenas Classe C.</label><br>
+<label><input type="radio" name="q4" value="d"> d) Não há diferença.</label>
+</div>
+
+<div class="pergunta">
+5. Na Matriz de Kraljic...<br>
+<label><input type="radio" name="q5" value="a"> a) Estratégico</label><br>
+<label><input type="radio" name="q5" value="b"> b) Alavancado</label><br>
+<label><input type="radio" name="q5" value="c"> c) Gargalo</label><br>
+<label><input type="radio" name="q5" value="d"> d) Não crítico</label>
+</div>
+
+
+<div class="pergunta">
+6. EOQ busca equilíbrio entre:<br>
+<label><input type="radio" name="q6" value="a"> a) Transporte e seguro</label><br>
+<label><input type="radio" name="q6" value="b"> b) Pedido e manutenção</label><br>
+<label><input type="radio" name="q6" value="c"> c) Preço e impostos</label><br>
+<label><input type="radio" name="q6" value="d"> d) Produção e venda</label>
+</div>
+
+<div class="pergunta">
+7. Fornecedor único alto impacto:<br>
+<label><input type="radio" name="q7" value="a"> a) Estratégica</label><br>
+<label><input type="radio" name="q7" value="b"> b) Rotineira</label><br>
+<label><input type="radio" name="q7" value="c"> c) Alavancagem</label><br>
+<label><input type="radio" name="q7" value="d"> d) Descarte</label>
+</div>
+
+<div class="pergunta">
+8. Efeito Chicote:<br>
+<label><input type="radio" name="q8" value="a"> a) Redução custos</label><br>
+<label><input type="radio" name="q8" value="b"> b) Pequena demanda gera grande variação</label><br>
+<label><input type="radio" name="q8" value="c"> c) Entrega rápida</label><br>
+<label><input type="radio" name="q8" value="d"> d) Padronização preço</label>
+</div>
+
+<div class="pergunta">
+9. Função do estoque segurança:<br>
+<label><input type="radio" name="q9" value="a"> a) Aumentar ativos</label><br>
+<label><input type="radio" name="q9" value="b"> b) Proteger contra variações</label><br>
+<label><input type="radio" name="q9" value="c"> c) Garantir classe C</label><br>
+<label><input type="radio" name="q9" value="d"> d) Reduzir inventários</label>
+</div>
+
+<div class="pergunta">
+10. RFQ objetivo:<br>
+<label><input type="radio" name="q10" value="a"> a) Informações gerais</label><br>
+<label><input type="radio" name="q10" value="b"> b) Receber propostas financeiras</label><br>
+<label><input type="radio" name="q10" value="c"> c) Ideias criativas</label><br>
+<label><input type="radio" name="q10" value="d"> d) Cancelamento</label>
+</div>
+
+
+<div class="pergunta">
+11. VMI transfere responsabilidade para:<br>
+<label><input type="radio" name="q11" value="a"> Cliente</label><br>
+<label><input type="radio" name="q11" value="b"> Fornecedor</label><br>
+<label><input type="radio" name="q11" value="c"> Transitário</label><br>
+<label><input type="radio" name="q11" value="d"> Marketing</label>
+</div>
+
+<div class="pergunta">
+12. Indicador de conversão estoque em vendas:<br>
+<label><input type="radio" name="q12" value="a"> Lead Time</label><br>
+<label><input type="radio" name="q12" value="b"> Giro de Estoque</label><br>
+<label><input type="radio" name="q12" value="c"> Custo Pedido</label><br>
+<label><input type="radio" name="q12" value="d"> Stockout</label>
+</div>
+
+<div class="pergunta">
+13. Expediting:<br>
+<label><input type="radio" name="q13" value="a"> Seleção fornecedores</label><br>
+<label><input type="radio" name="q13" value="b"> Acompanhar e acelerar pedidos</label><br>
+<label><input type="radio" name="q13" value="c"> Devolução</label><br>
+<label><input type="radio" name="q13" value="d"> Arquivar contratos</label>
+</div>
+
+<div class="pergunta">
+14. Preço de compra ponta iceberg porque:<br>
+<label><input type="radio" name="q14" value="a"> Parte mais cara</label><br>
+<label><input type="radio" name="q14" value="b"> Existem custos ocultos</label><br>
+<label><input type="radio" name="q14" value="c"> Inflação</label><br>
+<label><input type="radio" name="q14" value="d"> Fornecedor mente</label>
+</div>
+
+<div class="pergunta">
+15. Gestão itens Classe C:<br>
+<label><input type="radio" name="q15" value="a"> Negociar diário</label><br>
+<label><input type="radio" name="q15" value="b"> Sistema automatizado</label><br>
+<label><input type="radio" name="q15" value="c"> Segurança rígida</label><br>
+<label><input type="radio" name="q15" value="d"> Importação aérea</label>
+</div>
+
+<div class="pergunta">
+16. Sourcing estratégico:<br>
+<label><input type="radio" name="q16" value="a"> Comprar barato</label><br>
+<label><input type="radio" name="q16" value="b"> Relacionamento longo prazo</label><br>
+<label><input type="radio" name="q16" value="c"> Sem contratos</label><br>
+<label><input type="radio" name="q16" value="d"> Reduzir funcionários</label>
+</div>
+
+<div class="pergunta">
+17. Ponto de encomenda:<br>
+<label><input type="radio" name="q17" value="a"> Previsão vendas</label><br>
+<label><input type="radio" name="q17" value="b"> Consumo lead time + segurança</label><br>
+<label><input type="radio" name="q17" value="c"> Data fixa</label><br>
+<label><input type="radio" name="q17" value="d"> Espaço prateleira</label>
+</div>
+
+<div class="pergunta">
+18. Rotatividade baixa indica:<br>
+<label><input type="radio" name="q18" value="a"> Vendas rápidas</label><br>
+<label><input type="radio" name="q18" value="b"> Capital parado</label><br>
+<label><input type="radio" name="q18" value="c"> Armazém pequeno</label><br>
+<label><input type="radio" name="q18" value="d"> Sem fornecedores</label>
+</div>
+
+<div class="pergunta">
+19. Risco Single Sourcing Moçambique:<br>
+<label><input type="radio" name="q19" value="a"> Muitas opções</label><br>
+<label><input type="radio" name="q19" value="b"> Vulnerabilidade atrasos</label><br>
+<label><input type="radio" name="q19" value="c"> Transporte barato</label><br>
+<label><input type="radio" name="q19" value="d"> Imposto selo</label>
+</div>
+
+<div class="pergunta">
+20. Vantagem inventário cíclico:<br>
+<label><input type="radio" name="q20" value="a"> Fechar empresa</label><br>
+<label><input type="radio" name="q20" value="b"> Corrigir erros continuamente</label><br>
+<label><input type="radio" name="q20" value="c"> Reduz classe A</label><br>
+<label><input type="radio" name="q20" value="d"> Eliminar ERP</label>
+</div>
+
+
+<button onclick="corrigir()">Enviar Resultado para WhatsApp</button>
+
+</div>
+
+</body>
+</html>

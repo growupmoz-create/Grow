@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Exame Geral Final - Logística e Supply Chain</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#eef2f7;
+margin:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:1000px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+}
+
+.question{
+margin-top:18px;
+padding-bottom:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.result{
+margin-top:30px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Exame Geral Final</h1>
+
+<p><b>Curso:</b> Gestão de Logística e Supply Chain</p>
+<p><b>Duração:</b> 120 minutos</p>
+<p><b>Total:</b> 50 perguntas (20 Valores)</p>
+
+<form id="quiz">
+
+<script>
+
+const perguntas = [
+
+"1. Diferença entre Logística e SCM?",
+"2. Na curva ABC itens A devem ter:",
+"3. O TCO analisa:",
+"4. Lead Time significa:",
+"5. Acuracidade de inventário mede:",
+"6. Estoque de segurança serve para:",
+"7. Método FIFO garante:",
+"8. Efeito Chicote causa:",
+"9. LEC equilibra:",
+"10. Itens Gargalo na Matriz de Kraljic:",
+
+"11. Cross-docking permite:",
+"12. Modal mais flexível:",
+"13. Unitização facilita:",
+"14. WMS serve para:",
+"15. LCL significa:",
+"16. Frete de retorno:",
+"17. Corredor de Nacala é importante para:",
+"18. Picking por zona:",
+"19. Cabotagem refere-se a:",
+"20. Giro de estoque mede:",
+
+"21. Incoterm com maior responsabilidade do vendedor:",
+"22. FOB termina quando:",
+"23. Bill of Lading é:",
+"24. JUE serve para:",
+"25. Código SH serve para:",
+"26. Seguro internacional calculado sobre:",
+"27. Admissão temporária permite:",
+"28. No CIF quem paga seguro:",
+"29. Certificado SADC permite:",
+"30. Canal amarelo significa:",
+
+"31. Base logística em Oil & Gas:",
+"32. Cadeia de frio usada para:",
+"33. Logística reversa:",
+"34. Manutenção preventiva:",
+"35. OTIF mede:",
+"36. Logística humanitária:",
+"37. Last Mile:",
+"38. FEFO:",
+"39. OEA:",
+"40. Problema do agronegócio:",
+
+"41. Auditoria logística:",
+"42. Green Logistics:",
+"43. Segregação de funções:",
+"44. MRO:",
+"45. Gestor logístico estratégico:",
+"46. Bump-out:",
+"47. Logística 4.0/5.0:",
+"48. KPI:",
+"49. Conteúdo local:",
+"50. Ética na logística:"
+
+];
+
+const opcoes = [
+["Logística operacional; SCM estratégico","Controle simples","Preço+custos totais","Tempo entre pedido e receção","Diferença sistema vs físico","Proteger contra incertezas","Primeiro a entrar sai primeiro","Oscilações na cadeia","Pedido vs manutenção","Alto risco baixo impacto"],
+["Reduz estoque","Rodoviário","Movimentação mecânica","Gerir armazém","Carga consolidada","Evitar camião vazio","Escoamento mineração","Dividir armazém por áreas","Entre portos do país","Rotação estoque"],
+["DDP","Carga embarcada","Contrato transporte","Desembaraço digital","Classificação aduaneira","CIF+10%","Importar temporariamente","Vendedor","Redução impostos","Verificação documental"],
+["Apoiar operações","Vacinas alimentos","Retorno produtos","Revisões programadas","Entrega no prazo completo","Salvar vidas","Entrega final","Validade mais próxima","Empresa certificada","Perdas pós-colheita"],
+["Identificar falhas","Reduzir impacto ambiental","Evitar fraudes","Manutenção reparação operações","Equilibrar custo serviço","Desmontagem evento","IA automação","Medir desempenho","Empresas locais","Transparência"]
+
+];
+
+</script>
+
+<div id="perguntas"></div>
+
+<button type="button" onclick="corrigir()">Submeter Exame</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+const respostasCorretas = [
+"a","b","b","b","b","b","b","b","b","b",
+"b","c","b","b","b","b","a","b","a","b",
+"c","c","b","b","b","b","a","b","b","b",
+"b","b","b","b","b","b","b","b","b","b",
+"b","b","b","a","b","b","b","b","b","b"
+];
+
+let container = document.getElementById("perguntas");
+
+let contador = 0;
+
+for(let bloco=0; bloco<5; bloco++){
+
+for(let i=0;i<10;i++){
+
+let q = contador+1;
+
+let html = "<div class='question'>";
+html += "<p>"+perguntas[contador]+"</p>";
+
+let letras=["a","b","c","d"];
+
+for(let j=0;j<4;j++){
+html += "<input type='radio' name='q"+q+"' value='"+letras[j]+"'> "+letras[j]+") "+opcoes[bloco][j]+"<br>";
+}
+
+html += "</div>";
+
+container.innerHTML += html;
+
+contador++;
+
+}
+
+}
+
+function corrigir(){
+
+let pontos = 0;
+
+for(let i=1;i<=50;i++){
+
+let resp = document.querySelector("input[name='q"+i+"']:checked");
+
+if(resp && resp.value === respostasCorretas[i-1]){
+pontos++;
+}
+
+}
+
+let nota = (pontos*0.4).toFixed(1);
+
+document.getElementById("resultado").innerHTML =
+"Acertos: "+pontos+"/50 <br> Nota Final: "+nota+" / 20 valores";
+
+}
+
+</script>
+
+</body>
+</html>
