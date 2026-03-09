@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>2ª Avaliação - Estratégia e Autoridade</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:950px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:#e74c3c;
+text-align:center;
+margin-bottom:20px;
+}
+
+.question{
+margin-top:18px;
+padding-bottom:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>2ª Avaliação – Estratégia e Autoridade</h1>
+
+<div class="timer">
+Tempo restante: <span id="tempo">40:00</span>
+</div>
+
+<form id="quiz">
+
+<div class="question">
+<p>1. Função da Jornada do Herói no storytelling?</p>
+<input type="radio" name="q1" value="a"> a) Provar perfeição<br>
+<input type="radio" name="q1" value="b"> b) Mostrar superação e aprendizado<br>
+<input type="radio" name="q1" value="c"> c) Criar superioridade<br>
+<input type="radio" name="q1" value="d"> d) Substituir dados técnicos
+</div>
+
+<div class="question">
+<p>2. O que define Social Proof?</p>
+<input type="radio" name="q2" value="a"> a) Amigos influentes<br>
+<input type="radio" name="q2" value="b"> b) Validação de terceiros<br>
+<input type="radio" name="q2" value="c"> c) Curtidas em fotos<br>
+<input type="radio" name="q2" value="d"> d) Notas escolares
+</div>
+
+<div class="question">
+<p>3. Perigo da autopromoção excessiva?</p>
+<input type="radio" name="q3" value="a"> a) Parecer vendedor desesperado<br>
+<input type="radio" name="q3" value="b"> b) Muitas conexões<br>
+<input type="radio" name="q3" value="c"> c) Problema no algoritmo<br>
+<input type="radio" name="q3" value="d"> d) Nenhum
+</div>
+
+<div class="question">
+<p>4. Inteligência emocional em conflitos:</p>
+<input type="radio" name="q4" value="a"> a) Ignorar ofensas<br>
+<input type="radio" name="q4" value="b"> b) Separar problema das pessoas<br>
+<input type="radio" name="q4" value="c"> c) Ganhar discussão<br>
+<input type="radio" name="q4" value="d"> d) Suprimir emoções
+</div>
+
+<div class="question">
+<p>5. Liderança de influência:</p>
+<input type="radio" name="q5" value="a"> a) Evitar decisões<br>
+<input type="radio" name="q5" value="b"> b) Liderar pelo exemplo<br>
+<input type="radio" name="q5" value="c"> c) Apenas tecnologia<br>
+<input type="radio" name="q5" value="d"> d) Dividir salário
+</div>
+
+<div class="question">
+<p>6. Técnica de ancoragem em negociação:</p>
+<input type="radio" name="q6" value="a"> a) Prender contrato<br>
+<input type="radio" name="q6" value="b"> b) Criar referência inicial de valor<br>
+<input type="radio" name="q6" value="c"> c) Garantir salário<br>
+<input type="radio" name="q6" value="d"> d) Desviar assunto
+</div>
+
+<div class="question">
+<p>7. BATNA forte significa:</p>
+<input type="radio" name="q7" value="a"> a) Currículo bonito<br>
+<input type="radio" name="q7" value="b"> b) Ter alternativas reais<br>
+<input type="radio" name="q7" value="c"> c) Segredos da empresa<br>
+<input type="radio" name="q7" value="d"> d) Amizade com RH
+</div>
+
+<div class="question">
+<p>8. Diferença entre reagir e responder:</p>
+<input type="radio" name="q8" value="a"> a) Reagir emocional, responder estratégico<br>
+<input type="radio" name="q8" value="b"> b) Email vs presencial<br>
+<input type="radio" name="q8" value="c"> c) Culpa vs negação<br>
+<input type="radio" name="q8" value="d"> d) Sem diferença
+</div>
+
+<div class="question">
+<p>9. Transparência após erro:</p>
+<input type="radio" name="q9" value="a"> a) Perdão imediato<br>
+<input type="radio" name="q9" value="b"> b) Evitar risco reputacional maior<br>
+<input type="radio" name="q9" value="c"> c) Culpar software<br>
+<input type="radio" name="q9" value="d"> d) Forçar treinamento
+</div>
+
+<div class="question">
+<p>10. Mapa de poder informal:</p>
+<input type="radio" name="q10" value="a"> a) Ignorar hierarquia<br>
+<input type="radio" name="q10" value="b"> b) Identificar influenciadores<br>
+<input type="radio" name="q10" value="c"> c) Derrubar gestores<br>
+<input type="radio" name="q10" value="d"> d) Fazer fofoca
+</div>
+
+<div class="question">
+<p>11. Reciprocidade ética:</p>
+<input type="radio" name="q11" value="a"> a) Ajudar antes de pedir<br>
+<input type="radio" name="q11" value="b"> b) Cobrar favores<br>
+<input type="radio" name="q11" value="c"> c) Trocar segredos<br>
+<input type="radio" name="q11" value="d"> d) Ignorar colegas
+</div>
+
+<div class="question">
+<p>12. Vantagem do infoproduto:</p>
+<input type="radio" name="q12" value="a"> a) Mais caro<br>
+<input type="radio" name="q12" value="b"> b) Escala de vendas<br>
+<input type="radio" name="q12" value="c"> c) Menos conhecimento<br>
+<input type="radio" name="q12" value="d"> d) Marca fraca
+</div>
+
+<div class="question">
+<p>13. Productização de serviço significa:</p>
+<input type="radio" name="q13" value="a"> a) Processo definido com preço claro<br>
+<input type="radio" name="q13" value="b"> b) Vender produtos físicos<br>
+<input type="radio" name="q13" value="c"> c) Criar logotipo<br>
+<input type="radio" name="q13" value="d"> d) Trabalhar grátis
+</div>
+
+<div class="question">
+<p>14. Uso da IA no branding:</p>
+<input type="radio" name="q14" value="a"> a) IA faz tudo<br>
+<input type="radio" name="q14" value="b"> b) IA analisa dados, humano decide<br>
+<input type="radio" name="q14" value="c"> c) Ignorar IA<br>
+<input type="radio" name="q14" value="d"> d) Perfis falsos
+</div>
+
+<div class="question">
+<p>15. Maior ativo em mercado automatizado:</p>
+<input type="radio" name="q15" value="a"> a) Digitação rápida<br>
+<input type="radio" name="q15" value="b"> b) Autenticidade e ética<br>
+<input type="radio" name="q15" value="c"> c) Software caro<br>
+<input type="radio" name="q15" value="d"> d) Trabalhar 24h
+</div>
+
+<div class="question">
+<p>16. Pitch em transição de carreira:</p>
+<input type="radio" name="q16" value="a"> a) Reclamar da área antiga<br>
+<input type="radio" name="q16" value="b"> b) Mostrar competências transferíveis<br>
+<input type="radio" name="q16" value="c"> c) Pedir estágio<br>
+<input type="radio" name="q16" value="d"> d) Listar diplomas
+</div>
+
+<div class="question">
+<p>17. Matriz de Eisenhower protege:</p>
+<input type="radio" name="q17" value="a"> a) Finanças<br>
+<input type="radio" name="q17" value="b"> b) Tempo estratégico<br>
+<input type="radio" name="q17" value="c"> c) Seguidores<br>
+<input type="radio" name="q17" value="d"> d) Imagem ocupada
+</div>
+
+<div class="question">
+<p>18. Liderança com stakeholders:</p>
+<input type="radio" name="q18" value="a"> a) Agradar todos<br>
+<input type="radio" name="q18" value="b"> b) Alinhar expectativas estratégicas<br>
+<input type="radio" name="q18" value="c"> c) Falar só com acionistas<br>
+<input type="radio" name="q18" value="d"> d) Esconder problemas
+</div>
+
+<div class="question">
+<p>19. Escuta ativa em reuniões:</p>
+<input type="radio" name="q19" value="a"> a) Esperar falar<br>
+<input type="radio" name="q19" value="b"> b) Identificar necessidades reais<br>
+<input type="radio" name="q19" value="c"> c) Usar contra pessoa<br>
+<input type="radio" name="q19" value="d"> d) Apenas ser educado
+</div>
+
+<div class="question">
+<p>20. Marca pessoal rentável significa:</p>
+<input type="radio" name="q20" value="a"> a) Maior salário<br>
+<input type="radio" name="q20" value="b"> b) Múltiplas fontes de renda<br>
+<input type="radio" name="q20" value="c"> c) Luxo<br>
+<input type="radio" name="q20" value="d"> d) Trabalhar em 3 empresas
+</div>
+
+<button type="button" onclick="corrigir()">Submeter Avaliação</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo % 60;
+
+segundos = segundos < 10 ? "0"+segundos : segundos;
+
+document.getElementById("tempo").innerHTML =
+minutos + ":" + segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo esgotado! A avaliação será submetida.");
+corrigir();
+}
+
+},1000);
+
+
+function corrigir(){
+
+clearInterval(timer);
+
+let respostas={
+q1:"b",q2:"b",q3:"a",q4:"b",q5:"b",
+q6:"b",q7:"b",q8:"a",q9:"b",q10:"b",
+q11:"a",q12:"b",q13:"a",q14:"b",q15:"b",
+q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let r=document.querySelector('input[name="'+q+'"]:checked');
+
+if(r && r.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação Final: "+pontos+" / 20 valores";
+
+}
+
+</script>
+
+</body>
+</html>

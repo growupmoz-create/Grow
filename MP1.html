@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Avaliação 1 - Marketing Pessoal</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:950px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:#e74c3c;
+text-align:center;
+margin-bottom:20px;
+}
+
+.question{
+margin-top:18px;
+padding-bottom:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Avaliação 1 - Marketing Pessoal</h1>
+
+<div class="timer">
+Tempo restante: <span id="tempo">40:00</span>
+</div>
+
+<form id="quiz">
+
+<!-- PERGUNTAS -->
+
+<div class="question">
+<p>1. O que é Marketing Pessoal?</p>
+<input type="radio" name="q1" value="a"> a) Gestão estratégica da própria reputação<br>
+<input type="radio" name="q1" value="b"> b) Propaganda de produtos<br>
+<input type="radio" name="q1" value="c"> c) Marketing empresarial<br>
+<input type="radio" name="q1" value="d"> d) Apenas autopromoção
+</div>
+
+<div class="question">
+<p>2. Autoconhecimento ajuda a:</p>
+<input type="radio" name="q2" value="a"> a) Identificar valores e competências<br>
+<input type="radio" name="q2" value="b"> b) Evitar responsabilidades<br>
+<input type="radio" name="q2" value="c"> c) Aumentar seguidores<br>
+<input type="radio" name="q2" value="d"> d) Trabalhar menos
+</div>
+
+<div class="question">
+<p>3. A marca pessoal é construída principalmente por:</p>
+<input type="radio" name="q3" value="a"> a) Aparência física<br>
+<input type="radio" name="q3" value="b"> b) Comportamento e reputação<br>
+<input type="radio" name="q3" value="c"> c) Dinheiro<br>
+<input type="radio" name="q3" value="d"> d) Sorte
+</div>
+
+<div class="question">
+<p>4. Networking significa:</p>
+<input type="radio" name="q4" value="a"> a) Ter muitos amigos<br>
+<input type="radio" name="q4" value="b"> b) Construir relações profissionais estratégicas<br>
+<input type="radio" name="q4" value="c"> c) Trabalhar em TI<br>
+<input type="radio" name="q4" value="d"> d) Usar redes sociais
+</div>
+
+<div class="question">
+<p>5. Comunicação eficaz inclui:</p>
+<input type="radio" name="q5" value="a"> a) Linguagem clara e postura adequada<br>
+<input type="radio" name="q5" value="b"> b) Falar rápido<br>
+<input type="radio" name="q5" value="c"> c) Usar palavras difíceis<br>
+<input type="radio" name="q5" value="d"> d) Falar muito
+</div>
+
+<div class="question">
+<p>6. A primeira impressão profissional depende de:</p>
+<input type="radio" name="q6" value="a"> a) Vestuário e postura<br>
+<input type="radio" name="q6" value="b"> b) Apenas experiência<br>
+<input type="radio" name="q6" value="c"> c) Idade<br>
+<input type="radio" name="q6" value="d"> d) Diploma
+</div>
+
+<div class="question">
+<p>7. Branding pessoal significa:</p>
+<input type="radio" name="q7" value="a"> a) Construir uma identidade profissional clara<br>
+<input type="radio" name="q7" value="b"> b) Criar logotipo<br>
+<input type="radio" name="q7" value="c"> c) Usar roupas caras<br>
+<input type="radio" name="q7" value="d"> d) Ficar famoso
+</div>
+
+<div class="question">
+<p>8. O LinkedIn é usado principalmente para:</p>
+<input type="radio" name="q8" value="a"> a) Entretenimento<br>
+<input type="radio" name="q8" value="b"> b) Networking profissional<br>
+<input type="radio" name="q8" value="c"> c) Jogos<br>
+<input type="radio" name="q8" value="d"> d) Conversas pessoais
+</div>
+
+<div class="question">
+<p>9. Credibilidade profissional depende de:</p>
+<input type="radio" name="q9" value="a"> a) Promessas exageradas<br>
+<input type="radio" name="q9" value="b"> b) Consistência entre discurso e ações<br>
+<input type="radio" name="q9" value="c"> c) Aparência apenas<br>
+<input type="radio" name="q9" value="d"> d) Popularidade
+</div>
+
+<div class="question">
+<p>10. A reputação profissional é:</p>
+<input type="radio" name="q10" value="a"> a) O que você diz sobre si<br>
+<input type="radio" name="q10" value="b"> b) O que os outros dizem sobre você<br>
+<input type="radio" name="q10" value="c"> c) O seu salário<br>
+<input type="radio" name="q10" value="d"> d) Seu cargo
+</div>
+
+<div class="question">
+<p>11. Comunicação não verbal inclui:</p>
+<input type="radio" name="q11" value="a"> a) Postura e gestos<br>
+<input type="radio" name="q11" value="b"> b) Apenas palavras<br>
+<input type="radio" name="q11" value="c"> c) Emails<br>
+<input type="radio" name="q11" value="d"> d) Documentos
+</div>
+
+<div class="question">
+<p>12. A imagem profissional deve ser:</p>
+<input type="radio" name="q12" value="a"> a) Coerente com valores e profissão<br>
+<input type="radio" name="q12" value="b"> b) Copiada de outros<br>
+<input type="radio" name="q12" value="c"> c) Baseada em moda<br>
+<input type="radio" name="q12" value="d"> d) Aleatória
+</div>
+
+<div class="question">
+<p>13. Um bom pitch profissional deve ser:</p>
+<input type="radio" name="q13" value="a"> a) Curto e claro<br>
+<input type="radio" name="q13" value="b"> b) Longo e detalhado<br>
+<input type="radio" name="q13" value="c"> c) Técnico demais<br>
+<input type="radio" name="q13" value="d"> d) Improvisado
+</div>
+
+<div class="question">
+<p>14. Ética profissional fortalece:</p>
+<input type="radio" name="q14" value="a"> a) A reputação<br>
+<input type="radio" name="q14" value="b"> b) O ego<br>
+<input type="radio" name="q14" value="c"> c) A fama<br>
+<input type="radio" name="q14" value="d"> d) A aparência
+</div>
+
+<div class="question">
+<p>15. A presença digital deve:</p>
+<input type="radio" name="q15" value="a"> a) Refletir a marca pessoal<br>
+<input type="radio" name="q15" value="b"> b) Ser apenas divertida<br>
+<input type="radio" name="q15" value="c"> c) Ser privada<br>
+<input type="radio" name="q15" value="d"> d) Ser irrelevante
+</div>
+
+<div class="question">
+<p>16. Autoridade profissional cresce com:</p>
+<input type="radio" name="q16" value="a"> a) Compartilhar conhecimento<br>
+<input type="radio" name="q16" value="b"> b) Guardar conhecimento<br>
+<input type="radio" name="q16" value="c"> c) Falar pouco<br>
+<input type="radio" name="q16" value="d"> d) Criticar colegas
+</div>
+
+<div class="question">
+<p>17. Confiança profissional surge de:</p>
+<input type="radio" name="q17" value="a"> a) Consistência e resultados<br>
+<input type="radio" name="q17" value="b"> b) Promessas<br>
+<input type="radio" name="q17" value="c"> c) Aparência<br>
+<input type="radio" name="q17" value="d"> d) Popularidade
+</div>
+
+<div class="question">
+<p>18. Um erro comum no marketing pessoal é:</p>
+<input type="radio" name="q18" value="a"> a) Autopromoção exagerada<br>
+<input type="radio" name="q18" value="b"> b) Trabalhar muito<br>
+<input type="radio" name="q18" value="c"> c) Estudar<br>
+<input type="radio" name="q18" value="d"> d) Ser educado
+</div>
+
+<div class="question">
+<p>19. O objetivo final do marketing pessoal é:</p>
+<input type="radio" name="q19" value="a"> a) Construir reputação sólida<br>
+<input type="radio" name="q19" value="b"> b) Ficar famoso<br>
+<input type="radio" name="q19" value="c"> c) Ganhar seguidores<br>
+<input type="radio" name="q19" value="d"> d) Ter mais fotos
+</div>
+
+<div class="question">
+<p>20. Uma marca pessoal forte gera:</p>
+<input type="radio" name="q20" value="a"> a) Oportunidades profissionais<br>
+<input type="radio" name="q20" value="b"> b) Apenas fama<br>
+<input type="radio" name="q20" value="c"> c) Apenas dinheiro<br>
+<input type="radio" name="q20" value="d"> d) Popularidade
+</div>
+
+<button type="button" onclick="corrigir()">Submeter Avaliação</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo % 60;
+
+segundos = segundos < 10 ? "0"+segundos : segundos;
+
+document.getElementById("tempo").innerHTML =
+minutos + ":" + segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo esgotado! A avaliação será submetida.");
+corrigir();
+}
+
+},1000);
+
+
+function corrigir(){
+
+clearInterval(timer);
+
+let respostas={
+q1:"a",q2:"a",q3:"b",q4:"b",q5:"a",
+q6:"a",q7:"a",q8:"b",q9:"b",q10:"b",
+q11:"a",q12:"a",q13:"a",q14:"a",q15:"a",
+q16:"a",q17:"a",q18:"a",q19:"a",q20:"a"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let r=document.querySelector('input[name="'+q+'"]:checked');
+
+if(r && r.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação Final: "+pontos+" / 20 valores";
+
+}
+
+</script>
+
+</body>
+</html>

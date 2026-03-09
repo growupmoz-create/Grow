@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Exame Geral - Marketing Pessoal Integrado</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:1000px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:#e74c3c;
+text-align:center;
+margin-bottom:20px;
+}
+
+.question{
+margin-top:20px;
+padding-bottom:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Exame Geral de Certificação</h1>
+<h3>Marketing Pessoal Integrado </h3>
+
+<div class="timer">
+Tempo restante: <span id="tempo">40:00</span>
+</div>
+
+<form id="quiz">
+
+<div class="question">
+<p>1. Relação entre Autoconhecimento e Pitch:</p>
+<input type="radio" name="q1" value="a"> a) Nenhuma relação<br>
+<input type="radio" name="q1" value="b"> b) Limites éticos do pitch<br>
+<input type="radio" name="q1" value="c"> c) Base para um pitch autêntico<br>
+<input type="radio" name="q1" value="d"> d) Pitch vem antes
+</div>
+
+<div class="question">
+<p>2. Regra de Mehrabian na comunicação emocional:</p>
+<input type="radio" name="q2" value="a"> a) 55% corpo, 38% voz, 7% palavras<br>
+<input type="radio" name="q2" value="b"> b) 90% palavras<br>
+<input type="radio" name="q2" value="c"> c) 50% voz<br>
+<input type="radio" name="q2" value="d"> d) 100% conteúdo
+</div>
+
+<div class="question">
+<p>3. Arquétipo do Sábio comunica:</p>
+<input type="radio" name="q3" value="a"> a) Humor<br>
+<input type="radio" name="q3" value="b"> b) Autoridade e conhecimento<br>
+<input type="radio" name="q3" value="c"> c) Rebeldia<br>
+<input type="radio" name="q3" value="d"> d) Proteção
+</div>
+
+<div class="question">
+<p>4. Autoridade no LinkedIn depende de:</p>
+<input type="radio" name="q4" value="a"> a) Número de seguidores<br>
+<input type="radio" name="q4" value="b"> b) Conteúdo técnico e recomendações<br>
+<input type="radio" name="q4" value="c"> c) Postagens virais<br>
+<input type="radio" name="q4" value="d"> d) Fotos pessoais
+</div>
+
+<div class="question">
+<p>5. Ignorar Social Proof causa:</p>
+<input type="radio" name="q5" value="a"> a) Desconfiança do mercado<br>
+<input type="radio" name="q5" value="b"> b) Penalização do algoritmo<br>
+<input type="radio" name="q5" value="c"> c) Custo financeiro<br>
+<input type="radio" name="q5" value="d"> d) Problema técnico
+</div>
+
+<div class="question">
+<p>6. Efeito Halo ocorre quando:</p>
+<input type="radio" name="q6" value="a"> a) Conteúdo confunde audiência<br>
+<input type="radio" name="q6" value="b"> b) Excelência num tema melhora a reputação geral<br>
+<input type="radio" name="q6" value="c"> c) Algoritmo amplia alcance<br>
+<input type="radio" name="q6" value="d"> d) Conteúdo viraliza
+</div>
+
+<div class="question">
+<p>7. Inteligência emocional permite:</p>
+<input type="radio" name="q7" value="a"> a) Manipular pessoas<br>
+<input type="radio" name="q7" value="b"> b) Evitar emoções<br>
+<input type="radio" name="q7" value="c"> c) Gerir conflitos com empatia<br>
+<input type="radio" name="q7" value="d"> d) Ignorar pressão
+</div>
+
+<div class="question">
+<p>8. BATNA robusto significa:</p>
+<input type="radio" name="q8" value="a"> a) Discurso emocional<br>
+<input type="radio" name="q8" value="b"> b) Alternativas reais de negociação<br>
+<input type="radio" name="q8" value="c"> c) Informação secreta<br>
+<input type="radio" name="q8" value="d"> d) Apoio da equipa
+</div>
+
+<div class="question">
+<p>9. Inteligência cultural ajuda a:</p>
+<input type="radio" name="q9" value="a"> a) Abandonar cultura<br>
+<input type="radio" name="q9" value="b"> b) Adaptar-se a padrões globais<br>
+<input type="radio" name="q9" value="c"> c) Ignorar diferenças<br>
+<input type="radio" name="q9" value="d"> d) Trabalhar apenas localmente
+</div>
+
+<div class="question">
+<p>10. Pedir desculpas sem plano é erro porque:</p>
+<input type="radio" name="q10" value="a"> a) Demonstra fraqueza<br>
+<input type="radio" name="q10" value="b"> b) Falta solução concreta<br>
+<input type="radio" name="q10" value="c"> c) Aumenta visibilidade<br>
+<input type="radio" name="q10" value="d"> d) Parece spam
+</div>
+
+<div class="question">
+<p>11. Marca de C-Level foca em:</p>
+<input type="radio" name="q11" value="a"> a) Execução operacional<br>
+<input type="radio" name="q11" value="b"> b) Estratégia e governança<br>
+<input type="radio" name="q11" value="c"> c) Popularidade<br>
+<input type="radio" name="q11" value="d"> d) Aparência
+</div>
+
+<div class="question">
+<p>12. Productização significa:</p>
+<input type="radio" name="q12" value="a"> a) Vender produtos físicos<br>
+<input type="radio" name="q12" value="b"> b) Estruturar serviço com processo claro<br>
+<input type="radio" name="q12" value="c"> c) Criar logotipo<br>
+<input type="radio" name="q12" value="d"> d) Fazer publicidade
+</div>
+
+<div class="question">
+<p>13. Perenidade da marca pessoal vem de:</p>
+<input type="radio" name="q13" value="a"> a) Dinheiro acumulado<br>
+<input type="radio" name="q13" value="b"> b) Mentoria e legado<br>
+<input type="radio" name="q13" value="c"> c) Cargo ocupado<br>
+<input type="radio" name="q13" value="d"> d) Fama
+</div>
+
+<div class="question">
+<p>14. Slash Career significa:</p>
+<input type="radio" name="q14" value="a"> a) Desemprego frequente<br>
+<input type="radio" name="q14" value="b"> b) Múltiplas competências profissionais<br>
+<input type="radio" name="q14" value="c"> c) Programação<br>
+<input type="radio" name="q14" value="d"> d) Trabalhar em segredo
+</div>
+
+<div class="question">
+<p>15. Erro profissional descoberto:</p>
+<input type="radio" name="q15" value="a"> a) Esconder<br>
+<input type="radio" name="q15" value="b"> b) Assumir erro e propor solução<br>
+<input type="radio" name="q15" value="c"> c) Culpar colegas<br>
+<input type="radio" name="q15" value="d"> d) Ignorar
+</div>
+
+<div class="question">
+<p>16. Comentário agressivo no LinkedIn:</p>
+<input type="radio" name="q16" value="a"> a) Apagar<br>
+<input type="radio" name="q16" value="b"> b) Ironizar<br>
+<input type="radio" name="q16" value="c"> c) Responder com dados e educação<br>
+<input type="radio" name="q16" value="d"> d) Ataque coletivo
+</div>
+
+<div class="question">
+<p>17. Reunião internacional direta:</p>
+<input type="radio" name="q17" value="a"> a) Conversa longa<br>
+<input type="radio" name="q17" value="b"> b) Pontual e objetivo<br>
+<input type="radio" name="q17" value="c"> c) Metáforas<br>
+<input type="radio" name="q17" value="d"> d) Câmera desligada
+</div>
+
+<div class="question">
+<p>18. Primeiro passo para vender curso:</p>
+<input type="radio" name="q18" value="a"> a) Equipamento caro<br>
+<input type="radio" name="q18" value="b"> b) Validar autoridade com conteúdo<br>
+<input type="radio" name="q18" value="c"> c) Grande desconto<br>
+<input type="radio" name="q18" value="d"> d) Agência de marketing
+</div>
+
+<div class="question">
+<p>19. Café de networking estratégico:</p>
+<input type="radio" name="q19" value="a"> a) Urgente importante<br>
+<input type="radio" name="q19" value="b"> b) Importante não urgente<br>
+<input type="radio" name="q19" value="c"> c) Urgente não importante<br>
+<input type="radio" name="q19" value="d"> d) Distração
+</div>
+
+<div class="question">
+<p>20. Mensagem central do Marketing Pessoal:</p>
+<input type="radio" name="q20" value="a"> a) Esconder fraquezas<br>
+<input type="radio" name="q20" value="b"> b) Gestão estratégica da reputação<br>
+<input type="radio" name="q20" value="c"> c) Buscar fama<br>
+<input type="radio" name="q20" value="d"> d) Ser igual aos outros
+</div>
+
+<button type="button" onclick="corrigir()">Submeter Exame</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo % 60;
+
+segundos = segundos < 10 ? "0"+segundos : segundos;
+
+document.getElementById("tempo").innerHTML =
+minutos + ":" + segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo esgotado! O exame será submetido.");
+corrigir();
+}
+
+},1000);
+
+function corrigir(){
+
+clearInterval(timer);
+
+let respostas={
+q1:"c",q2:"a",q3:"b",q4:"b",q5:"a",
+q6:"b",q7:"c",q8:"b",q9:"b",q10:"b",
+q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",
+q16:"c",q17:"b",q18:"b",q19:"b",q20:"b"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let r=document.querySelector('input[name="'+q+'"]:checked');
+
+if(r && r.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação Final: "+pontos+" / 20 valores";
+
+}
+
+</script>
+
+</body>
+</html>
