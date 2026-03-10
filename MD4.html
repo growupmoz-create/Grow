@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exame Final - Marketing Digital I</title>
+<style>
+body{
+    font-family: Arial;
+    margin: 40px;
+}
+h1{
+    text-align: center;
+}
+.info{
+    margin-bottom:20px;
+}
+.pergunta{
+    margin-top:20px;
+    font-weight:bold;
+}
+.opcao{
+    margin-left:20px;
+}
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    font-size:16px;
+}
+#resultado{
+    margin-top:30px;
+    font-weight:bold;
+    font-size:18px;
+}
+.correct{
+    color: green;
+}
+.wrong{
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<h1>Exame Final de Marketing Digital I</h1>
+
+<!-- Timer -->
+<div id="timer" style="font-size:20px; font-weight:bold; margin-bottom:20px;">
+Tempo restante: 40:00
+</div>
+
+<script>
+let tempo = 40 * 60; // 40 minutos em segundos
+
+const displayTimer = document.getElementById('timer');
+const formElements = document.querySelectorAll('input[type="radio"]');
+
+const timerInterval = setInterval(() => {
+    let minutos = Math.floor(tempo / 60);
+    let segundos = tempo % 60;
+    segundos = segundos < 10 ? '0'+segundos : segundos;
+    displayTimer.textContent = `Tempo restante: ${minutos}:${segundos}`;
+    tempo--;
+
+    if(tempo < 0){
+        clearInterval(timerInterval);
+        displayTimer.textContent = 'Tempo esgotado!';
+        // desabilitar todas as opções
+        formElements.forEach(el => el.disabled = true);
+        // desabilitar botão
+        document.querySelector('button').disabled = true;
+        alert('O tempo acabou! Suas respostas não poderão ser alteradas.');
+    }
+}, 1000);
+</script>
+
+<div class="info">
+
+<p><b>Valor Total:</b> 20,0</p>
+<p><b>Instruções:</b></p>
+<ul>
+<li>Leia atentamente cada questão antes de responder.</li>
+<li>Assinale apenas uma alternativa por questão.</li>
+<li>Esta prova avalia a capacidade de síntese e aplicação prática dos conhecimentos adquiridos durante todo o módulo.</li>
+</ul>
+</div>
+
+<form id="exameForm">
+
+<!-- Questões 1 a 20 -->
+
+<div class="pergunta">1. Um pequeno empresário acredita que marketing digital se resume a criar um perfil no Instagram e postar fotos dos produtos diariamente. Com base nos conceitos fundamentais do marketing 4.0 e na visão estratégica apresentada no curso, qual seria a sua orientação profissional mais adequada?</div>
+<div class="opcao"><input type="radio" name="q1" value="a"> a) "Concordo plenamente. O Instagram é a ferramenta mais importante e, com posts diários, o sucesso é garantido."</div>
+<div class="opcao"><input type="radio" name="q1" value="b"> b) "Você está no caminho certo, mas é preciso também criar um blog para substituir o Instagram."</div>
+<div class="opcao"><input type="radio" name="q1" value="c"> c) "É um bom começo, mas o marketing digital exige uma estratégia mais ampla: definir metas, estudar o público, integrar ferramentas (como blog, SEO, e-mail marketing) e, acima de tudo, buscar uma conversa humanizada e relevante com o cliente, o consumidor 4.0."</div>
+<div class="opcao"><input type="radio" name="q1" value="d"> d) "Esqueça as redes sociais. O mais importante é investir pesado em anúncios no Google AdWords, pois isso trará resultados imediatos e dispensa qualquer planejamento."</div>
+
+<div class="pergunta">2. Uma equipe de marketing está completamente perdida, com tarefas duplicadas, prazos estourados e membros que não sabem o que os outros estão fazendo. Qual conceito e ferramenta, estudados no curso, poderiam resolver essa situação de forma mais eficaz?</div>
+<div class="opcao"><input type="radio" name="q2" value="a"> a) O conceito de Inbound Marketing, implementado por meio de uma Landing Page.</div>
+<div class="opcao"><input type="radio" name="q2" value="b"> b) A metodologia Kanban de organização visual de tarefas, que poderia ser implementada fisicamente ou através de uma ferramenta digital como o Trello, para dar transparência e fluxo ao trabalho.</div>
+<div class="opcao"><input type="radio" name="q2" value="c"> c) A criação de um blog corporativo para documentar todas as tarefas da equipe.</div>
+<div class="opcao"><input type="radio" name="q2" value="d"> d) A aplicação de técnicas de SEO para organizar as pastas do computador da equipe.</div>
+
+<div class="pergunta">3. Um gerente de marketing quer implementar o Inbound Marketing, mas sua equipe está acostumada a apenas empurrar promoções. Qual seria a primeira mudança de mentalidade que ele precisaria promover na equipe para iniciar essa transição?</div>
+<div class="opcao"><input type="radio" name="q3" value="a"> a) A equipe deve entender que a prioridade é aumentar o número de posts nas redes sociais, independentemente da qualidade.</div>
+<div class="opcao"><input type="radio" name="q3" value="b"> b) A equipe precisa compreender que o foco deve mudar de "interromper o cliente com ofertas" para "atraí-lo com conteúdo relevante e útil, construindo um relacionamento de confiança".</div>
+<div class="opcao"><input type="radio" name="q3" value="c"> c) A equipe deve focar exclusivamente na criação de vídeos virais para o YouTube.</div>
+<div class="opcao"><input type="radio" name="q3" value="d"> d) A equipe precisa aprender a comprar listas de e-mails para disparos em massa.</div>
+
+<div class="pergunta">4. Uma empresa criou uma Landing Page para oferecer um e-book gratuito em troca do e-mail do visitante. No entanto, o número de conversões (pessoas que preencheram o formulário) está muito baixo. Qual técnica, estudada no curso, poderia ser utilizada para testar e melhorar o desempenho dessa página?</div>
+<div class="opcao"><input type="radio" name="q4" value="a"> a) Aplicar técnicas avançadas de SEO no blog da empresa.</div>
+<div class="opcao"><input type="radio" name="q4" value="b"> b) Criar uma campanha de e-mail marketing para pedir para as pessoas preencherem o formulário.</div>
+<div class="opcao"><input type="radio" name="q4" value="c"> c) Realizar um Teste A/B, criando uma segunda versão da Landing Page com uma única alteração (ex: cor do botão, título, imagem) para comparar qual tem a maior taxa de conversão.</div>
+<div class="opcao"><input type="radio" name="q4" value="d"> d) Aumentar o número de campos no formulário para coletar mais dados e tornar a oferta mais valiosa.</div>
+
+<div class="pergunta">5. Analise as duas afirmações sobre Blogs e assinale a alternativa correta:<br>
+I. A criação de um blog é uma etapa fundamental em estratégias de Inbound Marketing, pois serve como um canal para atrair visitantes com conteúdo relevante e conduzi-los até uma oferta (como uma Landing Page).<br>
+II. Para que um blog tenha sucesso, o planejamento é essencial. Isso inclui definir o público-alvo, a frequência de postagens e o formato da linguagem, mas a escolha do template (design) não é importante, pois o conteúdo é o único fator relevante.</div>
+<div class="opcao"><input type="radio" name="q5" value="a"> a) As duas afirmações são verdadeiras, e a II justifica a I.</div>
+<div class="opcao"><input type="radio" name="q5" value="b"> b) As duas afirmações são verdadeiras, mas a II não justifica a I.</div>
+<div class="opcao"><input type="radio" name="q5" value="c"> c) A afirmação I é verdadeira, e a II é falsa.</div>
+<div class="opcao"><input type="radio" name="q5" value="d"> d) As duas afirmações são falsas.</div>
+
+<div class="pergunta">6. Um profissional de marketing digital deseja melhorar o posicionamento do site de seu cliente nos resultados orgânicos do Google para a palavra-chave "pizza artesanal delivery". Qual das seguintes ações representa a aplicação correta de uma técnica de SEO?</div>
+<div class="opcao"><input type="radio" name="q6" value="a"> a) Criar um anúncio pago no Google AdWords com a palavra-chave "pizza artesanal delivery".</div>
+<div class="opcao"><input type="radio" name="q6" value="b"> b) Escrever um artigo no blog do site com o título "Pizza Artesanal Delivery: 5 Dicas para Escolher a Melhor", utilizando a palavra-chave no título, ao longo do texto e nos atributos das imagens.</div>
+<div class="opcao"><input type="radio" name="q6" value="c"> c) Comprar um domínio de site que contenha exatamente a palavra-chave "pizzaartesanaldelivery.com.br".</div>
+<div class="opcao"><input type="radio" name="q6" value="d"> d) Postar a palavra-chave centenas de vezes no rodapé do site, mesmo que não faça sentido para o leitor.</div>
+
+<div class="pergunta">7. Uma empresa investiu em um blog e em anúncios no Google, mas a diretoria quer provas concretas do retorno. A equipe de marketing precisa apresentar dados sobre o comportamento dos usuários no site, como: quantas pessoas visitaram, de quais cidades elas são, qual a origem do tráfego e quais páginas são mais acessadas. Qual ferramenta é a mais indicada para fornecer esses relatórios?</div>
+<div class="opcao"><input type="radio" name="q7" value="a"> a) Google AdWords.</div>
+<div class="opcao"><input type="radio" name="q7" value="b"> b) Google Trends.</div>
+<div class="opcao"><input type="radio" name="q7" value="c"> c) Google Analytics.</div>
+<div class="opcao"><input type="radio" name="q7" value="d"> d) Google Adsense.</div>
+
+<div class="pergunta">8. Um blog de sucesso sobre viagens quer começar a gerar receita com seu conteúdo, sem precisar criar produtos próprios. Qual ferramenta do Google, estudada no curso, permitiria que ele exibisse anúncios de outros anunciantes em suas páginas e ganhasse dinheiro com isso?</div>
+<div class="opcao"><input type="radio" name="q8" value="a"> a) Google AdWords.</div>
+<div class="opcao"><input type="radio" name="q8" value="b"> b) Google Adsense.</div>
+<div class="opcao"><input type="radio" name="q8" value="c"> c) Google Analytics.</div>
+<div class="opcao"><input type="radio" name="q8" value="d"> d) Google Trends.</div>
+
+<div class="pergunta">9. Uma equipe de marketing capturou centenas de leads por meio de uma Landing Page que oferecia um e-book. Agora, eles têm uma planilha com nomes e e-mails, mas não sabem o que fazer com tanta informação. Qual seria o próximo passo lógico em uma estratégia de gestão de leads?</div>
+<div class="opcao"><input type="radio" name="q9" value="a"> a) Enviar um e-mail promocional de vendas para todos os leads imediatamente, todos os dias.</div>
+<div class="opcao"><input type="radio" name="q9" value="b"> b) Ignorar os leads, pois a maioria não comprará mesmo.</div>
+<div class="opcao"><input type="radio" name="q9" value="c"> c) Iniciar um processo de nutrição, segmentando esses leads por interesses (ex: tipo de viagem preferido) e enviando conteúdos relevantes para educá-los e construir um relacionamento.</div>
+<div class="opcao"><input type="radio" name="q9" value="d"> d) Vender a lista de e-mails para outras empresas para gerar receita rápida.</div>
+
+<div class="pergunta">10. Um gerente de marketing está planejando o orçamento do próximo mês. Ele tem os valores gastos no mês anterior como referência e já fez cotações com freelancers para novos projetos. Qual prática de planejamento orçamentário, sugerida no curso, ele deveria adotar para criar uma margem de segurança?</div>
+<div class="opcao"><input type="radio" name="q10" value="a"> a) Arredondar todos os valores para baixo, para caber no orçamento.</div>
+<div class="opcao"><input type="radio" name="q10" value="b"> b) Utilizar exatamente os valores gastos no mês anterior, sem alterações.</div>
+<div class="opcao"><input type="radio" name="q10" value="c"> c) Adicionar uma margem de segurança de 15% a 20% sobre o valor total projetado, para cobrir possíveis imprevistos.</div>
+<div class="opcao"><input type="radio" name="q10" value="d"> d) Cortar 30% do orçamento de todas as áreas para garantir que não haja surpresas.</div>
+
+<div class="pergunta">11. Uma empresa criou um Calendário de Marketing para o mês, com posts no blog, disparos de e-mail e publicações em redes sociais. Qual é a principal função desse calendário para a equipe?</div>
+<div class="opcao"><input type="radio" name="q11" value="a"> a) Registrar os feriados e aniversários dos funcionários.</div>
+<div class="opcao"><input type="radio" name="q11" value="b"> b) Controlar o orçamento gasto em cada campanha.</div>
+<div class="opcao"><input type="radio" name="q11" value="c"> c) Organizar e planejar as ações de comunicação, garantindo que o conteúdo seja publicado na data e horário certos, de forma consistente e alinhada com os objetivos da empresa.</div>
+<div class="opcao"><input type="radio" name="q11" value="d"> d) Servir como um documento sigiloso que não deve ser compartilhado com a equipe.</div>
+
+<div class="pergunta">12. Um profissional de marketing precisa escolher uma ferramenta para iniciar uma campanha de e-mail marketing com um orçamento muito limitado, mas com a possibilidade de crescer. Ele tem uma lista de 1.500 contatos e planeja enviar cerca de 10.000 e-mails por mês. Qual característica do Mailchimp tornaria essa ferramenta a escolha mais óbvia?</div>
+<div class="opcao"><input type="radio" name="q12" value="a"> a) Sua interface está disponível em português.</div>
+<div class="opcao"><input type="radio" name="q12" value="b"> b) Sua integração nativa com todas as redes sociais.</div>
+<div class="opcao"><input type="radio" name="q12" value="c"> c) Seu plano gratuito permite até 2.000 contatos e 12.000 envios mensais, atendendo perfeitamente à necessidade inicial.</div>
+<div class="opcao"><input type="radio" name="q12" value="d"> d) É a única ferramenta que oferece suporte por telefone 24 horas.</div>
+
+<div class="pergunta">13. Uma loja virtual de roupas está enfrentando um problema: clientes reclamam que os produtos chegam diferentes do esperado, e a loja suspeita de fraudes. Qual conjunto de práticas, estudado no curso, essa loja deveria adotar para aumentar a segurança e a confiança dos seus clientes?</div>
+<div class="opcao"><input type="radio" name="q13" value="a"> a) Utilizar apenas boleto bancário como forma de pagamento e ignorar as reclamações.</div>
+<div class="opcao"><input type="radio" name="q13" value="b"> b) Implementar um certificado de segurança SSL (cadeado e https no site), exibir políticas de troca e devolução claras, e usar sistemas de pagamento reconhecidos como PagSeguro ou PayPal.</div>
+<div class="opcao"><input type="radio" name="q13" value="c"> c) Pedir para os clientes enviarem fotos usando as roupas antes de finalizar a compra.</div>
+<div class="opcao"><input type="radio" name="q13" value="d"> d) Criar um perfil no Twitter para reclamações e não responder a elas.</div>
+
+<div class="pergunta">14. Um blogueiro de tecnologia quer começar a ganhar dinheiro recomendando produtos que ele usa e confia, sem precisar estocar ou criar seus próprios produtos. Ele quer receber uma comissão por cada venda que seus leitores fizerem através de seus links. Qual modelo de negócio digital ele deve procurar?</div>
+<div class="opcao"><input type="radio" name="q14" value="a"> a) E-commerce tradicional.</div>
+<div class="opcao"><input type="radio" name="q14" value="b"> b) Marketing de Afiliação.</div>
+<div class="opcao"><input type="radio" name="q14" value="c"> c) Venda de anúncios diretos para empresas.</div>
+<div class="opcao"><input type="radio" name="q14" value="d"> d) Criação de um clube de compras coletivas.</div>
+
+<div class="pergunta">15. Considere as duas situações e assinale a alternativa correta sobre o modelo de remuneração no Marketing de Afiliação:<br>
+Situação A: Um afiliado tem um blog sobre viagens e coloca um banner de uma agência de viagens. Ele recebe R$ 0,10 por cada mil vezes que esse banner é carregado na tela de seus visitantes.<br>
+Situação B: Outro afiliado escreve um post recomendando um curso de inglês online. Sempre que um leitor clica no link do post e compra o curso, o afiliado ganha 30% do valor da venda.<br>
+Qual é o nome dos modelos de remuneração aplicados nas Situações A e B, respectivamente?</div>
+<div class="opcao"><input type="radio" name="q15" value="a"> a) CPA (Custo por Ação) e CPC (Custo por Clique).</div>
+<div class="opcao"><input type="radio" name="q15" value="b"> b) CPM (Custo por Mil Impressões) e CPV (Custo por Venda).</div>
+<div class="opcao"><input type="radio" name="q15" value="c"> c) CPL (Custo por Lead) e CPA (Custo por Ação).</div>
+<div class="opcao"><input type="radio" name="q15" value="d"> d) CPV (Custo por Venda) e CPM (Custo por Mil Impressões).</div>
+
+<div class="pergunta">16. Uma marca de cosméticos quer lançar uma nova linha de maquiagem para um público jovem (18-25 anos). Considerando as características das plataformas estudadas, qual seria a combinação deve
+
+<!-- Questão 16 -->
+<div class="pergunta">16. Uma marca de cosméticos quer lançar uma nova linha de maquiagem para um público jovem (18-25 anos). Considerando as características das plataformas estudadas, qual seria a combinação de canais mais eficaz para engajar esse público?</div>
+<div class="opcao"><input type="radio" name="q16" value="a"> a) LinkedIn para artigos profissionais e e-mail marketing institucional.</div>
+<div class="opcao"><input type="radio" name="q16" value="b"> b) Um blog com textos extremamente técnicos sobre a química dos cosméticos.</div>
+<div class="opcao"><input type="radio" name="q16" value="c"> c) Uma campanha integrada: vídeos tutoriais no YouTube e Instagram mostrando como usar os produtos, posts no Pinterest com looks e inspirações, e interação rápida no Twitter para tirar dúvidas.</div>
+<div class="opcao"><input type="radio" name="q16" value="d"> d) Anúncios apenas em rádio e jornal impresso.</div>
+
+<!-- Questão 17 -->
+<div class="pergunta">17. Uma empresa de turismo quer criar uma pesquisa detalhada para entender melhor as preferências de viagem de seus clientes (destinos preferidos, orçamento, tipo de hospedagem). Eles precisam de um formulário online que seja visualmente atraente, fácil de responder no celular e que ofereça uma experiência agradável ao usuário. Qual ferramenta, estudada no curso, atenderia melhor a essa necessidade?</div>
+<div class="opcao"><input type="radio" name="q17" value="a"> a) Trello.</div>
+<div class="opcao"><input type="radio" name="q17" value="b"> b) Google Trends.</div>
+<div class="opcao"><input type="radio" name="q17" value="c"> c) Typeform.</div>
+<div class="opcao"><input type="radio" name="q17" value="d"> d) Mailchimp.</div>
+
+<!-- Questão 18 -->
+<div class="pergunta">18. Um hotel boutique quer criar um vídeo marketing de baixo custo para mostrar a experiência acolhedora e os detalhes da sua nova suíte. A equipe tem apenas um smartphone e pouco conhecimento técnico. Qual seria o processo mais adequado para produzir esse vídeo, seguindo as dicas do curso?</div>
+<div class="opcao"><input type="radio" name="q18" value="a"> a) Gravar um vídeo longo sem edição e publicá-lo imediatamente no YouTube.</div>
+<div class="opcao"><input type="radio" name="q18" value="b"> b) Planejar um pequeno roteiro, usar o smartphone com tripé para evitar tremores, caprichar na iluminação natural, e utilizar um aplicativo gratuito de edição (como o VideoShow) para fazer cortes e adicionar uma trilha sonora suave.</div>
+<div class="opcao"><input type="radio" name="q18" value="c"> c) Contratar uma produtora cara, pois vídeos de qualidade só podem ser feitos por profissionais.</div>
+<div class="opcao"><input type="radio" name="q18" value="d"> d) Fazer um vídeo ao vivo no Facebook sem qualquer planejamento, mostrando apenas o café da manhã.</div>
+
+<!-- Questão 19 -->
+<div class="pergunta">19. Analise a seguinte afirmação sobre a integração de ferramentas no marketing digital:<br>
+"O marketing digital eficaz não depende de uma única ferramenta, mas da integração estratégica entre elas. Um blog (Blogger) gera tráfego orgânico que é otimizado (SEO) e convertido em leads por uma Landing Page. Esses leads são nutridos (e-mail marketing no Mailchimp) e, eventualmente, convertidos em vendas. Todo o processo é monitorado (Google Analytics) para que as estratégias sejam constantemente aprimoradas."</div>
+<div class="opcao"><input type="radio" name="q19" value="a"> a) Incorreta, pois as ferramentas de marketing digital funcionam de forma isolada e não devem ser integradas.</div>
+<div class="opcao"><input type="radio" name="q19" value="b"> b) Correta, pois descreve um fluxo de trabalho integrado e lógico, onde cada ferramenta desempenha um papel específico e complementar na jornada do cliente.</div>
+<div class="opcao"><input type="radio" name="q19" value="c"> c) Parcialmente correta, pois o SEO não tem relação com blogs ou Landing Pages.</div>
+<div class="opcao"><input type="radio" name="q19" value="d"> d) Incorreta, pois o Google Analytics não serve para monitorar campanhas de e-mail marketing.</div>
+
+<!-- Questão 20 -->
+<div class="pergunta">20. Um aluno está finalizando o projeto "Vivendo a realidade do marketing digital" e precisa revisar todo o processo para a entrega final. Ele percebeu que, ao longo das 15 etapas, sua equipe criou: um plano de marketing, uma Landing Page, um blog, uma campanha de e-mail marketing, uma planilha de leads, um orçamento, um calendário, vídeos e um perfil em redes de afiliados. O que está faltando para que ele possa transformar todo esse trabalho em um material rico de Inbound Marketing, como proposto no projeto?</div>
+<div class="opcao"><input type="radio" name="q20" value="a"> a) Criar uma nova empresa fictícia e recomeçar o projeto do zero.</div>
+<div class="opcao"><input type="radio" name="q20" value="b"> b) Compilar e resumir todo o trabalho realizado em um e-book, que servirá como isca digital (oferta) na Landing Page para atrair mais leads.</div>
+<div class="opcao"><input type="radio" name="q20" value="c"> c) Apagar todos os arquivos e começar de novo, pois o projeto final deve ser algo completamente novo.</div>
+<div class="opcao"><input type="radio" name="q20" value="d"> d) Transformar a Landing Page em uma loja virtual para começar a vender os produtos fictícios.</div>
+
+<button type="button" onclick="corrigir()">Submeter e Corrigir</button>
+<div id="resultado"></div>
+
+<script>
+const respostasCorretas = {
+q1:'c', q2:'b', q3:'b', q4:'c', q5:'b', q6:'b', q7:'c', q8:'b', q9:'c', q10:'c',
+q11:'c', q12:'c', q13:'b', q14:'b', q15:'b', q16:'c', q17:'c', q18:'b', q19:'b', q20:'b'
+};
+
+function corrigir(){
+    let total = 0;
+    for(let i=1; i<=20; i++){
+        let radios = document.getElementsByName('q'+i);
+        for(let r of radios){
+            if(r.checked){
+                if(r.value === respostasCorretas['q'+i]){
+                    total++;
+                    r.parentNode.classList.add('correct');
+                } else {
+                    r.parentNode.classList.add('wrong');
+                }
+            }
+        }
+    }
+    document.getElementById('resultado').innerHTML = 'Resultado: '+total+'/20';
+}
+</script>
+
+</form>
+</body>
+</html>
