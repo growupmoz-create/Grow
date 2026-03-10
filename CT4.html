@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exame Final de Contabilidade Básica</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:20px;
+}
+
+.container{
+background:white;
+padding:20px;
+max-width:900px;
+margin:auto;
+border-radius:10px;
+}
+
+.timer{
+font-size:22px;
+color:red;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.pergunta{
+margin-bottom:18px;
+}
+
+button{
+background:#007bff;
+color:white;
+padding:12px;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+</style>
+
+<script>
+
+let tempo = 5400;
+
+function iniciarTimer(){
+
+setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo%60;
+
+document.getElementById("timer").innerHTML =
+"Tempo restante: " + minutos + "m " + segundos + "s";
+
+tempo--;
+
+if(tempo < 0){
+corrigir();
+}
+
+},1000);
+
+}
+
+function corrigir(){
+
+let respostas = {
+
+q1:"B", q2:"B", q3:"B", q4:"B", q5:"B",
+q6:"C", q7:"B", q8:"B", q9:"B", q10:"C",
+q11:"C", q12:"C", q13:"B", q14:"D", q15:"B",
+q16:"B", q17:"A", q18:"B", q19:"B", q20:"B",
+q21:"C", q22:"B", q23:"A", q24:"D", q25:"B",
+q26:"C", q27:"C", q28:"B", q29:"B", q30:"B",
+q31:"B", q32:"C", q33:"B", q34:"B", q35:"A",
+q36:"B", q37:"C", q38:"A", q39:"A", q40:"C"
+
+};
+
+let pontos = 0;
+
+for(let q in respostas){
+
+let marcado = document.querySelector('input[name="'+q+'"]:checked');
+
+if(marcado && marcado.value == respostas[q]){
+pontos += 0.5;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"<h2>Resultado: " + pontos + " / 20 valores</h2>";
+
+}
+
+</script>
+
+</head>
+
+<body onload="iniciarTimer()">
+
+<div class="container">
+
+<h1>EXAME FINAL DE CONTABILIDADE BÁSICA</h1>
+
+
+<p>Duração: 90 minutos | Cotação: 20 valores</p>
+
+<div class="timer" id="timer"></div>
+
+<form>
+
+<div class="pergunta">
+1. O Método das Partidas Dobradas determina que:<br>
+<input type="radio" name="q1" value="A">A) Apenas contas do Ativo podem ser debitadas<br>
+<input type="radio" name="q1" value="B">B) Para cada débito há um ou mais créditos de igual valor<br>
+<input type="radio" name="q1" value="C">C) Créditos sempre maiores que débitos<br>
+<input type="radio" name="q1" value="D">D) Passivo sempre maior que Ativo
+</div>
+
+<div class="pergunta">
+2. A conta "Depreciação Acumulada" é classificada como:<br>
+<input type="radio" name="q2" value="A">A) Passivo Circulante<br>
+<input type="radio" name="q2" value="B">B) Conta retificadora do Ativo<br>
+<input type="radio" name="q2" value="C">C) Conta de resultado<br>
+<input type="radio" name="q2" value="D">D) Património Líquido
+</div>
+
+<div class="pergunta">
+3. O Princípio da Competência estabelece que:<br>
+<input type="radio" name="q3" value="A">A) Apenas quando pago<br>
+<input type="radio" name="q3" value="B">B) No período em que ocorrem<br>
+<input type="radio" name="q3" value="C">C) Apenas despesas no final do ano<br>
+<input type="radio" name="q3" value="D">D) Apenas receitas recebidas
+</div>
+
+<div class="pergunta">
+4. Compra de mercadorias a prazo:<br>
+<input type="radio" name="q4" value="A">A) Débito Caixa Crédito Mercadorias<br>
+<input type="radio" name="q4" value="B">B) Débito Mercadorias Crédito Fornecedores<br>
+<input type="radio" name="q4" value="C">C) Débito Fornecedores Crédito Mercadorias<br>
+<input type="radio" name="q4" value="D">D) Débito Mercadorias Crédito Caixa
+</div>
+
+<div class="pergunta">
+5. O Passivo representa:<br>
+<input type="radio" name="q5" value="A">A) Bens e direitos<br>
+<input type="radio" name="q5" value="B">B) Obrigações com terceiros<br>
+<input type="radio" name="q5" value="C">C) Aplicações<br>
+<input type="radio" name="q5" value="D">D) Lucros
+</div>
+
+<div class="pergunta">
+6. Pelo princípio da prudência deve-se provisionar:<br>
+<input type="radio" name="q6" value="A">A) 50.000<br>
+<input type="radio" name="q6" value="B">B) Média<br>
+<input type="radio" name="q6" value="C">C) 80.000<br>
+<input type="radio" name="q6" value="D">D) Nada
+</div>
+
+<div class="pergunta">
+7. A conta Caixa tem natureza:<br>
+<input type="radio" name="q7" value="A">A) Credora<br>
+<input type="radio" name="q7" value="B">B) Devedora<br>
+<input type="radio" name="q7" value="C">C) Nula<br>
+<input type="radio" name="q7" value="D">D) Variável
+</div>
+
+<div class="pergunta">
+8. O Balanço Patrimonial é:<br>
+<input type="radio" name="q8" value="A">A) Demonstração de lucro<br>
+<input type="radio" name="q8" value="B">B) Representação do património numa data<br>
+<input type="radio" name="q8" value="C">C) Registo de vendas<br>
+<input type="radio" name="q8" value="D">D) Lista de fornecedores
+</div>
+
+<div class="pergunta">
+9. Bens intangíveis são:<br>
+<input type="radio" name="q9" value="A">A) Veículos<br>
+<input type="radio" name="q9" value="B">B) Marcas e patentes<br>
+<input type="radio" name="q9" value="C">C) Dinheiro<br>
+<input type="radio" name="q9" value="D">D) Terrenos
+</div>
+
+<div class="pergunta">
+10. Capital próprio encontra-se no:<br>
+<input type="radio" name="q10" value="A">A) Passivo<br>
+<input type="radio" name="q10" value="B">B) Ativo<br>
+<input type="radio" name="q10" value="C">C) Património Líquido<br>
+<input type="radio" name="q10" value="D">D) Resultado
+</div>
+
+<!-- Perguntas 11 até 40 -->
+
+<div class="pergunta">11. Fórmula com várias contas debitadas e uma creditada:<br>
+<input type="radio" name="q11" value="A">A Primeira<br>
+<input type="radio" name="q11" value="B">B Segunda<br>
+<input type="radio" name="q11" value="C">C Terceira<br>
+<input type="radio" name="q11" value="D">D Quarta
+</div>
+
+<div class="pergunta">12. Princípio da Entidade:<br>
+<input type="radio" name="q12" value="A">A Confunde patrimónios<br>
+<input type="radio" name="q12" value="B">B Continuidade<br>
+<input type="radio" name="q12" value="C">C Património da empresa é autónomo<br>
+<input type="radio" name="q12" value="D">D Liquidar empresa
+</div>
+
+<div class="pergunta">13. Contas de resultado dividem-se em:<br>
+<input type="radio" name="q13" value="A">A Ativo e Passivo<br>
+<input type="radio" name="q13" value="B">B Receitas e Despesas<br>
+<input type="radio" name="q13" value="C">C Bens e Direitos<br>
+<input type="radio" name="q13" value="D">D Obrigações
+</div>
+
+<div class="pergunta">14. Ativo 200000 Passivo 150000 Património Líquido:<br>
+<input type="radio" name="q14" value="A">A 350000<br>
+<input type="radio" name="q14" value="B">B 200000<br>
+<input type="radio" name="q14" value="C">C 150000<br>
+<input type="radio" name="q14" value="D">D 50000
+</div>
+
+<div class="pergunta">15. Plano de contas deve ter:<br>
+<input type="radio" name="q15" value="A">A Rigidez<br>
+<input type="radio" name="q15" value="B">B Flexibilidade<br>
+<input type="radio" name="q15" value="C">C Sem código<br>
+<input type="radio" name="q15" value="D">D Igual para todos
+</div>
+
+<div class="pergunta">16. Passivo circulante:<br>
+<input type="radio" name="q16" value="A">A Caixa<br>
+<input type="radio" name="q16" value="B">B Fornecedores salários impostos<br>
+<input type="radio" name="q16" value="C">C Máquinas<br>
+<input type="radio" name="q16" value="D">D Capital social
+</div>
+
+<div class="pergunta">17. Despesas antecipadas:<br>
+<input type="radio" name="q17" value="A">A Pagas agora benefício futuro<br>
+<input type="radio" name="q17" value="B">B Não pagas<br>
+<input type="radio" name="q17" value="C">C Não afetam resultado<br>
+<input type="radio" name="q17" value="D">D Despesas pessoal
+</div>
+
+<div class="pergunta">18. No razonete lado direito:<br>
+<input type="radio" name="q18" value="A">A Débito<br>
+<input type="radio" name="q18" value="B">B Crédito<br>
+<input type="radio" name="q18" value="C">C Bens<br>
+<input type="radio" name="q18" value="D">D Direitos
+</div>
+
+<div class="pergunta">19. Duplicatas descontadas:<br>
+<input type="radio" name="q19" value="A">A Ativo devedor<br>
+<input type="radio" name="q19" value="B">B Retificadora do ativo credora<br>
+<input type="radio" name="q19" value="C">C Passivo devedor<br>
+<input type="radio" name="q19" value="D">D Resultado
+</div>
+
+<div class="pergunta">20. Resultado do exercício obtido pela:<br>
+<input type="radio" name="q20" value="A">A Balanço<br>
+<input type="radio" name="q20" value="B">B DRE<br>
+<input type="radio" name="q20" value="C">C Razão<br>
+<input type="radio" name="q20" value="D">D Diário
+</div>
+
+<div class="pergunta">21. ICMS sobre vendas:<br>
+<input type="radio" name="q21" value="A">A Ativo<br>
+<input type="radio" name="q21" value="B">B Passivo<br>
+<input type="radio" name="q21" value="C">C Dedução da receita<br>
+<input type="radio" name="q21" value="D">D Despesa
+</div>
+
+<div class="pergunta">22. Princípio continuidade:<br>
+<input type="radio" name="q22" value="A">A Encerrar empresa<br>
+<input type="radio" name="q22" value="B">B Vida provável influencia avaliação<br>
+<input type="radio" name="q22" value="C">C Património fixo<br>
+<input type="radio" name="q22" value="D">D Obrigações não registadas
+</div>
+
+<div class="pergunta">23. Prejuízos acumulados:<br>
+<input type="radio" name="q23" value="A">A Natureza devedora<br>
+<input type="radio" name="q23" value="B">B Credora<br>
+<input type="radio" name="q23" value="C">C Ativo<br>
+<input type="radio" name="q23" value="D">D Passivo
+</div>
+
+<div class="pergunta">24. Compra financiada fórmula:<br>
+<input type="radio" name="q24" value="A">A Primeira<br>
+<input type="radio" name="q24" value="B">B Segunda<br>
+<input type="radio" name="q24" value="C">C Terceira<br>
+<input type="radio" name="q24" value="D">D Quarta
+</div>
+
+<div class="pergunta">25. Bens numerários:<br>
+<input type="radio" name="q25" value="A">A Veículos<br>
+<input type="radio" name="q25" value="B">B Dinheiro caixa e banco<br>
+<input type="radio" name="q25" value="C">C Marcas<br>
+<input type="radio" name="q25" value="D">D Ações
+</div>
+
+<div class="pergunta">26. Princípio oportunidade:<br>
+<input type="radio" name="q26" value="A">A Entidade<br>
+<input type="radio" name="q26" value="B">B Competência<br>
+<input type="radio" name="q26" value="C">C Registo no momento certo<br>
+<input type="radio" name="q26" value="D">D Prudência
+</div>
+
+<div class="pergunta">27. Reservas de lucros pertencem:<br>
+<input type="radio" name="q27" value="A">A Ativo<br>
+<input type="radio" name="q27" value="B">B Passivo<br>
+<input type="radio" name="q27" value="C">C Património líquido<br>
+<input type="radio" name="q27" value="D">D Resultado
+</div>
+
+<div class="pergunta">28. Capital de terceiros:<br>
+<input type="radio" name="q28" value="A">A Ativo<br>
+<input type="radio" name="q28" value="B">B Passivo<br>
+<input type="radio" name="q28" value="C">C PL<br>
+<input type="radio" name="q28" value="D">D Receitas
+</div>
+
+<div class="pergunta">29. Amortização aplica-se:<br>
+<input type="radio" name="q29" value="A">A Bens tangíveis<br>
+<input type="radio" name="q29" value="B">B Intangíveis<br>
+<input type="radio" name="q29" value="C">C Estoques<br>
+<input type="radio" name="q29" value="D">D Caixa
+</div>
+
+<div class="pergunta">30. Despesa salários:<br>
+<input type="radio" name="q30" value="A">A Débito caixa<br>
+<input type="radio" name="q30" value="B">B Débito despesa crédito salários pagar<br>
+<input type="radio" name="q30" value="C">C Débito salários pagar<br>
+<input type="radio" name="q30" value="D">D Crédito salários pagar
+</div>
+
+<div class="pergunta">31. No ativo ordem:<br>
+<input type="radio" name="q31" value="A">A Exigibilidade<br>
+<input type="radio" name="q31" value="B">B Liquidez<br>
+<input type="radio" name="q31" value="C">C Alfabética<br>
+<input type="radio" name="q31" value="D">D Valor
+</div>
+
+<div class="pergunta">32. Receitas provocam:<br>
+<input type="radio" name="q32" value="A">A Aumento ativo diminui passivo<br>
+<input type="radio" name="q32" value="B">B Aumento passivo<br>
+<input type="radio" name="q32" value="C">C Aumento património líquido<br>
+<input type="radio" name="q32" value="D">D Diminuição PL
+</div>
+
+<div class="pergunta">33. Exaustão acumulada:<br>
+<input type="radio" name="q33" value="A">A Intangíveis<br>
+<input type="radio" name="q33" value="B">B Recursos minerais florestais<br>
+<input type="radio" name="q33" value="C">C Imobilizado geral<br>
+<input type="radio" name="q33" value="D">D Estoques
+</div>
+
+<div class="pergunta">34. Adiantamento fornecedores:<br>
+<input type="radio" name="q34" value="A">A Passivo<br>
+<input type="radio" name="q34" value="B">B Ativo circulante<br>
+<input type="radio" name="q34" value="C">C PL<br>
+<input type="radio" name="q34" value="D">D Despesa
+</div>
+
+<div class="pergunta">35. Resultado operacional:<br>
+<input type="radio" name="q35" value="A">A Lucro bruto menos despesas operacionais<br>
+<input type="radio" name="q35" value="B">B Receita bruta<br>
+<input type="radio" name="q35" value="C">C Após imposto<br>
+<input type="radio" name="q35" value="D">D Soma receitas
+</div>
+
+<div class="pergunta">36. Fornecedores representam:<br>
+<input type="radio" name="q36" value="A">A Direito<br>
+<input type="radio" name="q36" value="B">B Obrigação<br>
+<input type="radio" name="q36" value="C">C Bem<br>
+<input type="radio" name="q36" value="D">D Receita
+</div>
+
+<div class="pergunta">37. Registo pelo valor original:<br>
+<input type="radio" name="q37" value="A">A Competência<br>
+<input type="radio" name="q37" value="B">B Entidade<br>
+<input type="radio" name="q37" value="C">C Valor original<br>
+<input type="radio" name="q37" value="D">D Oportunidade
+</div>
+
+<div class="pergunta">38. Compra veículo à vista envolve:<br>
+<input type="radio" name="q38" value="A">A Duas contas do ativo<br>
+<input type="radio" name="q38" value="B">B Ativo e passivo<br>
+<input type="radio" name="q38" value="C">C Ativo e resultado<br>
+<input type="radio" name="q38" value="D">D Passivo
+</div>
+
+<div class="pergunta">39. Passivo ordem:<br>
+<input type="radio" name="q39" value="A">A Exigibilidade<br>
+<input type="radio" name="q39" value="B">B Liquidez<br>
+<input type="radio" name="q39" value="C">C Alfabética<br>
+<input type="radio" name="q39" value="D">D Rentabilidade
+</div>
+
+<div class="pergunta">
+40. Lucro líquido transferido para:<br>
+<input type="radio" name="q40" value="A">A Ativo<br>
+<input type="radio" name="q40" value="B">B Passivo<br>
+<input type="radio" name="q40" value="C">C Património Líquido<br>
+<input type="radio" name="q40" value="D">D Resultado próximo exercício
+</div>
+
+</form>
+
+<br>
+
+<button onclick="corrigir()">Finalizar Exame</button>
+
+<div id="resultado"></div>
+
+</div>
+
+</body>
+</html>

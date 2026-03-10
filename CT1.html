@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>1ª Avaliação de Contabilidade Básica</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:1000px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:#e74c3c;
+text-align:center;
+margin-bottom:20px;
+}
+
+.question{
+margin-top:20px;
+padding-bottom:10px;
+border-bottom:1px solid #ddd;
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5edb;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+}
+
+.info{
+margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>1ª Avaliação de Contabilidade Básica</h1>
+
+<div class="info">
+</div>
+
+<div class="timer">
+Tempo restante: <span id="tempo">40:00</span>
+</div>
+
+<form id="quiz">
+
+<div class="question">
+<p>1. O que é Património para a Contabilidade?</p>
+<input type="radio" name="q1" value="a"> a) Apenas o dinheiro que a empresa possui.<br>
+<input type="radio" name="q1" value="b"> b) O lucro obtido no final do ano.<br>
+<input type="radio" name="q1" value="c"> c) O conjunto de bens, direitos e obrigações de uma entidade.<br>
+<input type="radio" name="q1" value="d"> d) A soma das dívidas da empresa.
+</div>
+
+<div class="question">
+<p>2. Os Bens podem ser classificados como:</p>
+<input type="radio" name="q2" value="a"> a) Bens numerários, bens de venda, bens de renda e bens fixos.<br>
+<input type="radio" name="q2" value="b"> b) Bens materiais e bens imateriais apenas.<br>
+<input type="radio" name="q2" value="c"> c) Bens de consumo e bens de capital.<br>
+<input type="radio" name="q2" value="d"> d) Bens próprios e bens de terceiros.
+</div>
+
+<div class="question">
+<p>3. São exemplos de Bens de Renda:</p>
+<input type="radio" name="q3" value="a"> a) Dinheiro em caixa e bancos.<br>
+<input type="radio" name="q3" value="b"> b) Letras de câmbio e ações de outras empresas.<br>
+<input type="radio" name="q3" value="c"> c) Veículos e móveis.<br>
+<input type="radio" name="q3" value="d"> d) Mercadorias destinadas à venda.
+</div>
+
+<div class="question">
+<p>4. Direitos para a Contabilidade representam:</p>
+<input type="radio" name="q4" value="a"> a) Os valores que a empresa tem a pagar a terceiros.<br>
+<input type="radio" name="q4" value="b"> b) Os valores que a empresa tem a receber de terceiros.<br>
+<input type="radio" name="q4" value="c"> c) Os bens imobilizados da empresa.<br>
+<input type="radio" name="q4" value="d"> d) As despesas antecipadas.
+</div>
+
+<div class="question">
+<p>5. Obrigações são:</p>
+<input type="radio" name="q5" value="a"> a) Todos os valores que uma empresa tem a receber.<br>
+<input type="radio" name="q5" value="b"> b) Todos os bens da empresa.<br>
+<input type="radio" name="q5" value="c"> c) Todos os valores que uma empresa tem a pagar a terceiros.<br>
+<input type="radio" name="q5" value="d"> d) A riqueza líquida da empresa.
+</div>
+
+<div class="question">
+<p>6. O que significa AZIENDA?</p>
+<input type="radio" name="q6" value="a"> a) O lucro da empresa.<br>
+<input type="radio" name="q6" value="b"> b) O conjunto de bens, direitos e obrigações juntamente com o administrador.<br>
+<input type="radio" name="q6" value="c"> c) Apenas as obrigações da empresa.<br>
+<input type="radio" name="q6" value="d"> d) O património líquido negativo.
+</div>
+
+<div class="question">
+<p>7. O Património Líquido é calculado através da fórmula:</p>
+<input type="radio" name="q7" value="a"> a) Bens + Obrigações – Direitos<br>
+<input type="radio" name="q7" value="b"> b) Ativo + Passivo<br>
+<input type="radio" name="q7" value="c"> c) Bens + Direitos – Obrigações<br>
+<input type="radio" name="q7" value="d"> d) Passivo – Ativo
+</div>
+
+<div class="question">
+<p>8. Quando Bens + Direitos é maior que Obrigações a situação é:</p>
+<input type="radio" name="q8" value="a"> a) Nula<br>
+<input type="radio" name="q8" value="b"> b) Negativa<br>
+<input type="radio" name="q8" value="c"> c) Passiva<br>
+<input type="radio" name="q8" value="d"> d) Positiva
+</div>
+
+<div class="question">
+<p>9. No gráfico patrimonial o ATIVO representa:</p>
+<input type="radio" name="q9" value="a"> a) Obrigações<br>
+<input type="radio" name="q9" value="b"> b) Bens e direitos<br>
+<input type="radio" name="q9" value="c"> c) Capital de terceiros<br>
+<input type="radio" name="q9" value="d"> d) Património líquido
+</div>
+
+<div class="question">
+<p>10. O PASSIVO representa:</p>
+<input type="radio" name="q10" value="a"> a) Bens<br>
+<input type="radio" name="q10" value="b"> b) Direitos<br>
+<input type="radio" name="q10" value="c"> c) Obrigações e património líquido<br>
+<input type="radio" name="q10" value="d"> d) Despesas
+</div>
+
+<div class="question">
+<p>11. Investimentos patrimoniais são:</p>
+<input type="radio" name="q11" value="a"> a) Dívidas<br>
+<input type="radio" name="q11" value="b"> b) Aquisições de bens e direitos<br>
+<input type="radio" name="q11" value="c"> c) Empréstimos<br>
+<input type="radio" name="q11" value="d"> d) Lucros
+</div>
+
+<div class="question">
+<p>12. Aplicações de recursos correspondem:</p>
+<input type="radio" name="q12" value="a"> a) Passivo<br>
+<input type="radio" name="q12" value="b"> b) Ativo<br>
+<input type="radio" name="q12" value="c"> c) Património líquido<br>
+<input type="radio" name="q12" value="d"> d) Caixa
+</div>
+
+<div class="question">
+<p>13. Origens de recursos estão:</p>
+<input type="radio" name="q13" value="a"> a) Ativo<br>
+<input type="radio" name="q13" value="b"> b) Bens<br>
+<input type="radio" name="q13" value="c"> c) Passivo e património líquido<br>
+<input type="radio" name="q13" value="d"> d) Caixa
+</div>
+
+<div class="question">
+<p>14. Capital próprio está no:</p>
+<input type="radio" name="q14" value="a"> a) Passivo<br>
+<input type="radio" name="q14" value="b"> b) Património líquido<br>
+<input type="radio" name="q14" value="c"> c) Ativo<br>
+<input type="radio" name="q14" value="d"> d) Estoque
+</div>
+
+<div class="question">
+<p>15. Capital de terceiros está no:</p>
+<input type="radio" name="q15" value="a"> a) Património líquido<br>
+<input type="radio" name="q15" value="b"> b) Passivo<br>
+<input type="radio" name="q15" value="c"> c) Ativo<br>
+<input type="radio" name="q15" value="d"> d) Lucros
+</div>
+
+<div class="question">
+<p>16. A equação fundamental é:</p>
+<input type="radio" name="q16" value="a"> a) Ativo = Passivo – PL<br>
+<input type="radio" name="q16" value="b"> b) Ativo = Passivo + PL<br>
+<input type="radio" name="q16" value="c"> c) Passivo = Ativo + PL<br>
+<input type="radio" name="q16" value="d"> d) PL = Passivo + Ativo
+</div>
+
+<div class="question">
+<p>17. Balanço patrimonial é:</p>
+<input type="radio" name="q17" value="a"> a) Representação do património num momento<br>
+<input type="radio" name="q17" value="b"> b) Lista de dívidas<br>
+<input type="radio" name="q17" value="c"> c) Registro de vendas<br>
+<input type="radio" name="q17" value="d"> d) Soma de lucros
+</div>
+
+<div class="question">
+<p>18. Bens 100000 + Direitos 50000 – Obrigações 80000 =</p>
+<input type="radio" name="q18" value="a"> a) 130000<br>
+<input type="radio" name="q18" value="b"> b) 70000<br>
+<input type="radio" name="q18" value="c"> c) 150000<br>
+<input type="radio" name="q18" value="d"> d) 230000
+</div>
+
+<div class="question">
+<p>19. Obrigações maiores que bens + direitos:</p>
+<input type="radio" name="q19" value="a"> a) Positiva<br>
+<input type="radio" name="q19" value="b"> b) Nula<br>
+<input type="radio" name="q19" value="c"> c) Negativa<br>
+<input type="radio" name="q19" value="d"> d) Equilibrada
+</div>
+
+<div class="question">
+<p>20. Empréstimos contraídos registam-se:</p>
+<input type="radio" name="q20" value="a"> a) Ativo<br>
+<input type="radio" name="q20" value="b"> b) Passivo<br>
+<input type="radio" name="q20" value="c"> c) Património líquido<br>
+<input type="radio" name="q20" value="d"> d) Fora do balanço
+</div>
+
+<button type="button" onclick="corrigir()">Submeter Avaliação</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo % 60;
+
+if(segundos < 10) segundos = "0"+segundos;
+
+document.getElementById("tempo").innerHTML =
+minutos + ":" + segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo esgotado! A prova será submetida.");
+corrigir();
+}
+
+},1000);
+
+function corrigir(){
+
+clearInterval(timer);
+
+let respostas={
+q1:"c",q2:"a",q3:"b",q4:"b",q5:"c",
+q6:"b",q7:"c",q8:"d",q9:"b",q10:"c",
+q11:"b",q12:"b",q13:"c",q14:"b",q15:"b",
+q16:"b",q17:"a",q18:"b",q19:"c",q20:"b"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let r=document.querySelector('input[name="'+q+'"]:checked');
+
+if(r && r.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação Final: "+pontos+" / 20 valores";
+
+}
+
+</script>
+
+</body>
+</html>
