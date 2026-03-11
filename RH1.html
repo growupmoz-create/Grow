@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1ª Avaliação - Gestão de Recursos Humanos</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:40px;
+}
+
+.caixa{
+background:white;
+padding:25px;
+border-radius:10px;
+max-width:900px;
+margin:auto;
+}
+
+.pergunta{
+font-weight:bold;
+margin-top:20px;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:red;
+margin-bottom:20px;
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:16px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.correct{
+background:#c8f7c5;
+}
+
+.wrong{
+background:#f7c5c5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="caixa">
+
+<h2>1ª Avaliação: Organização, Recrutamento e Desenvolvimento de RH</h2>
+
+<p><b>Valor Total: 20 Valores | 20 Perguntas de Múltipla Escolha (1 valor cada)</b></p>
+
+<div class="timer" id="timer">Tempo restante: 40:00</div>
+
+<form id="quiz">
+
+<div class="pergunta">1. De acordo com o manual, qual é o ativo mais valioso de uma organização?</div>
+<label><input type="radio" name="q1" value="a"> A) O património imobiliário.</label><br>
+<label><input type="radio" name="q1" value="b"> B) Os recursos financeiros.</label><br>
+<label><input type="radio" name="q1" value="c"> C) Os recursos humanos.</label><br>
+<label><input type="radio" name="q1" value="d"> D) Os sistemas informáticos.</label>
+
+<div class="pergunta">2. Qual é a missão principal da ASAC mencionada no manual?</div>
+<label><input type="radio" name="q2" value="a"> A) Maximizar os lucros dos sócios.</label><br>
+<label><input type="radio" name="q2" value="b"> B) Contribuir para o desenvolvimento social e apoio comunitário.</label><br>
+<label><input type="radio" name="q2" value="c"> C) Vender serviços de consultoria internacional.</label><br>
+<label><input type="radio" name="q2" value="d"> D) Substituir as funções do Governo.</label>
+
+<div class="pergunta">3. A estrutura de governação da ASAC define a Assembleia Geral como:</div>
+<label><input type="radio" name="q3" value="a"> A) Um órgão meramente consultivo.</label><br>
+<label><input type="radio" name="q3" value="b"> B) O órgão diretivo com plenos poderes estatutários.</label><br>
+<label><input type="radio" name="q3" value="c"> C) O setor responsável pelo processamento de salários.</label><br>
+<label><input type="radio" name="q3" value="d"> D) Uma reunião semanal de voluntários.</label>
+
+<div class="pergunta">4. Quem dirige as atividades da ASAC e presta contas ao Conselho Directivo?</div>
+<label><input type="radio" name="q4" value="a"> A) O Presidente da Assembleia Geral.</label><br>
+<label><input type="radio" name="q4" value="b"> B) O Director(a) Executivo(a).</label><br>
+<label><input type="radio" name="q4" value="c"> C) O Gestor de Logística.</label><br>
+<label><input type="radio" name="q4" value="d"> D) O Conselho Fiscal.</label>
+
+<div class="pergunta">5. As atividades de Nível III na organização de RH  incluem:</div>
+<label><input type="radio" name="q5" value="a"> A) Organizar processos de recrutamento.</label><br>
+<label><input type="radio" name="q5" value="b"> B) Processar salários e remunerações.</label><br>
+<label><input type="radio" name="q5" value="c"> C) Tomar decisões sobre nomeações e despedimentos.</label><br>
+<label><input type="radio" name="q5" value="d"> D) Atualizar os processos individuais.</label>
+
+<div class="pergunta">6. Qual é a idade mínima para a admissão de um trabalhador na ASAC?</div>
+<label><input type="radio" name="q6" value="a"> A) 16 anos.</label><br>
+<label><input type="radio" name="q6" value="b"> B) 18 anos.</label><br>
+<label><input type="radio" name="q6" value="c"> C) 21 anos.</label><br>
+<label><input type="radio" name="q6" value="d"> D) 25 anos.</label>
+
+<div class="pergunta">7. O recrutamento interno é priorizado para:</div>
+<label><input type="radio" name="q7" value="a"> A) Reduzir os custos com anúncios.</label><br>
+<label><input type="radio" name="q7" value="b"> B) Valorizar os trabalhadores da casa com competências adequadas.</label><br>
+<label><input type="radio" name="q7" value="c"> C) Evitar a entrada de pessoas novas na organização.</label><br>
+<label><input type="radio" name="q7" value="d"> D) Cumprir uma exigência do Ministério do Trabalho.</label>
+
+<div class="pergunta">8. Num concurso externo, qual é o número mínimo de jornais para publicação?</div>
+<label><input type="radio" name="q8" value="a"> A) Um jornal local.</label><br>
+<label><input type="radio" name="q8" value="b"> B) Dois jornais de maior circulação.</label><br>
+<label><input type="radio" name="q8" value="c"> C) Apenas no site oficial.</label><br>
+<label><input type="radio" name="q8" value="d"> D) Não é necessária publicação em jornais.</label>
+
+<div class="pergunta">9. O prazo para recepção de candidaturas em concursos externos é de:</div>
+<label><input type="radio" name="q9" value="a"> A) 5 a 10 dias.</label><br>
+<label><input type="radio" name="q9" value="b"> B) 10 a 15 dias.</label><br>
+<label><input type="radio" name="q9" value="c"> C) 15 a 25 dias.</label><br>
+<label><input type="radio" name="q9" value="d"> D) 30 a 60 dias.</label>
+
+<div class="pergunta">10. Qual destes métodos de seleção é obrigatório para cargos de Direção?</div>
+<label><input type="radio" name="q10" value="a"> A) Apenas entrevista.</label><br>
+<label><input type="radio" name="q10" value="b"> B) Apenas avaliação curricular.</label><br>
+<label><input type="radio" name="q10" value="c"> C) Avaliação curricular, provas de conhecimentos e entrevistas.</label><br>
+<label><input type="radio" name="q10" value="d"> D) Sorteio entre os candidatos aptos.</label>
+
+<div class="pergunta">11. Como são classificados os resultados de exames médicos?</div>
+<label><input type="radio" name="q11" value="a"> A) Numa escala de 0 a 20.</label><br>
+<label><input type="radio" name="q11" value="b"> B) Como "Apto" ou "Não Apto".</label><br>
+<label><input type="radio" name="q11" value="c"> C) Por percentagem de saúde.</label><br>
+<label><input type="radio" name="q11" value="d"> D) Por ordem de chegada.</label>
+
+<div class="pergunta">12. O que formaliza a aceitação do cargo pelo candidato selecionado?</div>
+<label><input type="radio" name="q12" value="a"> A) O contrato verbal.</label><br>
+<label><input type="radio" name="q12" value="b"> B) A assinatura do Termo de Aceitação (Pág. 13).</label><br>
+<label><input type="radio" name="q12" value="c"> C) O envio de um e-mail de agradecimento.</label><br>
+<label><input type="radio" name="q12" value="d"> D) A entrega da primeira tarefa.</label>
+
+<div class="pergunta">13. A definição de Contrato de Trabalho citada no manual baseia-se em qual lei?</div>
+<label><input type="radio" name="q13" value="a"> A) Lei 23/2007 (Lei do Trabalho).</label><br>
+<label><input type="radio" name="q13" value="b"> B) Código Civil.</label><br>
+<label><input type="radio" name="q13" value="c"> C) Constituição da República.</label><br>
+<label><input type="radio" name="q13" value="d"> D) Regulamento Interno da ASAC.</label>
+
+<div class="pergunta">14. Qual é o objetivo do processo de "Integração" ()?</div>
+<label><input type="radio" name="q14" value="a"> A) Avaliar se o trabalhador merece o salário acordado.</label><br>
+<label><input type="radio" name="q14" value="b"> B) Familiarizar o novo trabalhador com a cultura e normas da ASAC.</label><br>
+<label><input type="radio" name="q14" value="c"> C) Apresentar o trabalhador aos doadores.</label><br>
+<label><input type="radio" name="q14" value="d"> D) Iniciar o processo de despedimento.</label>
+
+<div class="pergunta">15. O Levantamento de Necessidades de Formação (LNF) deve ser feito:</div>
+<label><input type="radio" name="q15" value="a"> A) Sempre que um trabalhador comete um erro.</label><br>
+<label><input type="radio" name="q15" value="b"> B) Anualmente, para alinhar as competências com a estratégia da ASAC.</label><br>
+<label><input type="radio" name="q15" value="c"> C) Apenas quando há orçamento sobrando.</label><br>
+<label><input type="radio" name="q15" value="d"> D) Somente para os novos contratados.</label>
+
+<div class="pergunta">16. A "Formação Interna" caracteriza-se por:</div>
+<label><input type="radio" name="q16" value="a"> A) Enviar trabalhadores para universidades estrangeiras.</label><br>
+<label><input type="radio" name="q16" value="b"> B) Aproveitar os conhecimentos dos quadros da própria ASAC.</label><br>
+<label><input type="radio" name="q16" value="c"> C) Contratar consultores externos caros.</label><br>
+<label><input type="radio" name="q16" value="d"> D) Comprar livros para a biblioteca.</label>
+
+<div class="pergunta">17. Após uma formação externa, o que o trabalhador deve apresentar?</div>
+<label><input type="radio" name="q17" value="a"> A) Apenas o certificado.</label><br>
+<label><input type="radio" name="q17" value="b"> B) Um relatório e a partilha de conhecimentos com os colegas.</label><br>
+<label><input type="radio" name="q17" value="c"> C) O pedido de reembolso das despesas.</label><br>
+<label><input type="radio" name="q17" value="d"> D) Uma carta de demissão para procurar novo emprego.</label>
+
+<div class="pergunta">18. A Avaliação de Desempenho  é um processo que visa:</div>
+<label><input type="radio" name="q18" value="a"> A) Punir os trabalhadores mais lentos.</label><br>
+<label><input type="radio" name="q18" value="b"> B) Analisar o comportamento e resultados para melhorar a eficiência.</label><br>
+<label><input type="radio" name="q18" value="c"> C) Justificar a redução de salários.</label><br>
+<label><input type="radio" name="q18" value="d"> D) Cumprir uma formalidade sem impacto prático.</label>
+
+<div class="pergunta">19. Um dos fatores de avaliação mencionados no manual  é:</div>
+<label><input type="radio" name="q19" value="a"> A) O local de residência.</label><br>
+<label><input type="radio" name="q19" value="b"> B) A assiduidade e pontualidade.</label><br>
+<label><input type="radio" name="q19" value="c"> C) A religião do trabalhador.</label><br>
+<label><input type="radio" name="q19" value="d"> D) O número de filhos.</label>
+
+<div class="pergunta">20. Na "Gestão por Objectivos", a avaliação foca-se em:</div>
+<label><input type="radio" name="q20" value="a"> A) Quanto tempo o trabalhador passa no escritório.</label><br>
+<label><input type="radio" name="q20" value="b"> B) Se o trabalhador é simpático com a Direção.</label><br>
+<label><input type="radio" name="q20" value="c"> C) No cumprimento das metas e resultados previamente acordados.</label><br>
+<label><input type="radio" name="q20" value="d"> D) No histórico escolar do trabalhador.</label>
+
+<br><br>
+
+<button type="button" onclick="corrigir()">Submeter Prova</button>
+
+<h3 id="resultado"></h3>
+
+</form>
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo%60;
+
+if(segundos < 10){
+segundos = "0"+segundos;
+}
+
+document.getElementById("timer").innerHTML =
+"Tempo restante: "+minutos+":"+segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo terminado!");
+corrigir();
+}
+
+},1000);
+
+
+function corrigir(){
+
+let respostas = {
+q1:"c",
+q2:"b",
+q3:"b",
+q4:"b",
+q5:"b",
+q6:"b",
+q7:"b",
+q8:"b",
+q9:"c",
+q10:"c",
+q11:"b",
+q12:"b",
+q13:"a",
+q14:"b",
+q15:"b",
+q16:"b",
+q17:"b",
+q18:"b",
+q19:"b",
+q20:"c"
+};
+
+let total = 0;
+
+for(let i=1;i<=20;i++){
+
+let q = document.getElementsByName("q"+i);
+
+for(let opcao of q){
+
+if(opcao.checked){
+
+if(opcao.value == respostas["q"+i]){
+total++;
+}
+
+}
+
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação: "+total+" / 20";
+
+}
+
+</script>
+
+</body>
+</html>

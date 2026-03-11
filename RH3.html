@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3ª Avaliação: Procedimentos Administrativos e Gestão Documental</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.container{
+background:white;
+padding:20px;
+border-radius:10px;
+max-width:900px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+}
+
+.timer{
+font-size:22px;
+font-weight:bold;
+color:red;
+text-align:center;
+margin-bottom:20px;
+}
+
+.question{
+margin-bottom:20px;
+}
+
+button{
+background:green;
+color:white;
+padding:12px;
+border:none;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.result{
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>3ª Avaliação: Procedimentos Administrativos e Gestão Documental</h1>
+
+<p><b>Valor Total: 20 Valores | 20 Perguntas de Múltipla Escolha (1 valor cada)</b></p>
+
+<div class="timer">
+Tempo restante: <span id="tempo">40:00</span>
+</div>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. O "Formulário de Requisição de Pessoal"  deve ser obrigatoriamente assinado por quem antes de chegar ao RH?</p>
+<input type="radio" name="q1" value="A">A) Pelo candidato à vaga.<br>
+<input type="radio" name="q1" value="B">B) Pelo Responsável do Sector/Projecto requerente.<br>
+<input type="radio" name="q1" value="C">C) Pelo segurança da organização.<br>
+<input type="radio" name="q1" value="D">D) Por um representante do Governo.
+</div>
+
+<div class="question">
+<p>2. No modelo de "Anúncio de Vaga", qual destes elementos é facultativo?</p>
+<input type="radio" name="q2" value="A">A) Título do posto.<br>
+<input type="radio" name="q2" value="B">B) Requisitos mínimos.<br>
+<input type="radio" name="q2" value="C">C) Hobbies preferidos do candidato.<br>
+<input type="radio" name="q2" value="D">D) Data limite para candidatura.
+</div>
+
+<div class="question">
+<p>3. O documento "Guia de Entrevista" serve primordialmente para:</p>
+<input type="radio" name="q3" value="A">A) Anotar o número de telefone do candidato.<br>
+<input type="radio" name="q3" value="B">B) Padronizar as perguntas e garantir a imparcialidade na avaliação.<br>
+<input type="radio" name="q3" value="C">C) Decidir o salário antes da prova escrita.<br>
+<input type="radio" name="q3" value="D">D) Substituir a análise do Curriculum Vitae.
+</div>
+
+<div class="question">
+<p>4. Na "Grelha de Pontuação de Candidatos", qual o critério técnico que costuma ter maior peso?</p>
+<input type="radio" name="q4" value="A">A) Aparência física.<br>
+<input type="radio" name="q4" value="B">B) Experiência profissional relevante e formação técnica.<br>
+<input type="radio" name="q4" value="C">C) Local onde o candidato nasceu.<br>
+<input type="radio" name="q4" value="D">D) Afinidade religiosa.
+</div>
+
+<div class="question">
+<p>5. O "Termo de Aceitação"  deve conter uma cláusula onde o trabalhador declara:</p>
+<input type="radio" name="q5" value="A">A) Que não aceita as normas da organização.<br>
+<input type="radio" name="q5" value="B">B) Conhecer e aceitar o Regulamento Interno e o Manual de RH.<br>
+<input type="radio" name="q5" value="C">C) Que trabalhará apenas 4 horas por dia.<br>
+<input type="radio" name="q5" value="D">D) Que pode usar o carro da empresa para fins pessoais.
+</div>
+
+<div class="question">
+<p>6. No modelo de "Contrato de Trabalho a Prazo Certo", a falta de indicação do motivo da contratação a prazo implica:</p>
+<input type="radio" name="q6" value="A">A) A nulidade do contrato.<br>
+<input type="radio" name="q6" value="B">B) A conversão automática em contrato por tempo indeterminado (segundo a Lei).<br>
+<input type="radio" name="q6" value="C">C) Uma multa para o trabalhador.<br>
+<input type="radio" name="q6" value="D">D) O cancelamento das férias.
+</div>
+
+<div class="question">
+<p>7. O formulário de "Avaliação de Desempenho Anual"  exige o parecer final de quem?</p>
+<input type="radio" name="q7" value="A">A) Do Oficial de Limpeza.<br>
+<input type="radio" name="q7" value="B">B) Do Avaliador e a confirmação do Avaliado (Trabalhador).<br>
+<input type="radio" name="q7" value="C">C) Apenas do Diretor Executivo.<br>
+<input type="radio" name="q7" value="D">D) De uma empresa de auditoria externa.
+</div>
+
+<div class="question">
+<p>8. No "Mapa de Registo de Faltas", as faltas por "Nojo" referem-se a:</p>
+<input type="radio" name="q8" value="A">A) Doença infectocontagiosa.<br>
+<input type="radio" name="q8" value="B">B) Falecimento de familiares (Luto).<br>
+<input type="radio" name="q8" value="C">C) Casamento do próprio trabalhador.<br>
+<input type="radio" name="q8" value="D">D) Problemas de saneamento básico.
+</div>
+
+<div class="question">
+<p>9. O documento "Mapa de Férias" deve ser elaborado levando em conta:</p>
+<input type="radio" name="q9" value="A">A) Apenas o desejo do trabalhador.<br>
+<input type="radio" name="q9" value="B">B) Apenas a vontade do chefe.<br>
+<input type="radio" name="q9" value="C">C) A compatibilidade entre o interesse do serviço e o descanso do trabalhador.<br>
+<input type="radio" name="q9" value="D">D) O calendário de feriados de outros países.
+</div>
+
+<div class="question">
+<p>10. O "Certificado de Trabalho" (emitido no fim do contrato) deve conter:</p>
+<input type="radio" name="q10" value="A">A) Uma avaliação negativa do comportamento do trabalhador.<br>
+<input type="radio" name="q10" value="B">B) Apenas o tempo de serviço e as funções desempenhadas.<br>
+<input type="radio" name="q10" value="C">C) O motivo detalhado de todas as faltas dadas.<br>
+<input type="radio" name="q10" value="D">D) O histórico médico do trabalhador.
+</div>
+
+<div class="question">
+<p>11. No "Pedido de Requisição de Material" , quem deve autorizar a saída do material do stock?</p>
+<input type="radio" name="q11" value="A">A) O motorista.<br>
+<input type="radio" name="q11" value="B">B) O Oficial de Administração ou Diretor de Área.<br>
+<input type="radio" name="q11" value="C">C) O fornecedor externo.<br>
+<input type="radio" name="q11" value="D">D) O trabalhador que precisa do material.
+</div>
+
+<div class="question">
+<p>12. O "Logbook" ou Livro de Bordo (Pág. 78) é um documento obrigatório para:</p>
+<input type="radio" name="q12" value="A">A) Registar a entrada de visitantes.<br>
+<input type="radio" name="q12" value="B">B) Controlar a quilometragem, destino e combustível dos veículos.<br>
+<input type="radio" name="q12" value="C">C) Anotar as receitas de café da copa.<br>
+<input type="radio" name="q12" value="D">D) Listar os aniversariantes do mês.
+</div>
+
+<div class="question">
+<p>13. No formulário de "Prestação de Contas de Viagem", o trabalhador deve anexar:</p>
+<input type="radio" name="q13" value="A">A) Fotos da paisagem visitada.<br>
+<input type="radio" name="q13" value="B">B) Comprovativos originais de despesas (faturas/recibos).<br>
+<input type="radio" name="q13" value="C">C) Uma lista de pessoas que conheceu.<br>
+<input type="radio" name="q13" value="D">D) Apenas o bilhete de identidade.
+</div>
+
+<div class="question">
+<p>14. A "Ficha de Cadastro Individual", deve ser actualizada:</p>
+<input type="radio" name="q14" value="A">A) Apenas uma vez a cada 10 anos.<br>
+<input type="radio" name="q14" value="B">B) Sempre que houver alteração na situação familiar, morada ou formação do trabalhador.<br>
+<input type="radio" name="q14" value="C">C) Nunca, após ser preenchida na entrada.<br>
+<input type="radio" name="q14" value="D">D) Somente se o trabalhador mudar de nome.
+</div>
+
+<div class="question">
+<p>15. O "Pedido de Licença", deve ser submetido com que antecedência mínima para férias?</p>
+<input type="radio" name="q15" value="A">A) 24 horas.<br>
+<input type="radio" name="q15" value="B">B) No mínimo 15 a 30 dias (conforme os procedimentos administrativos internos).<br>
+<input type="radio" name="q15" value="C">C) No dia em que as férias começam.<br>
+<input type="radio" name="q15" value="D">D) Não precisa de pedido escrito, apenas aviso verbal.
+</div>
+
+<div class="question">
+<p>16. Na gestão de stocks , o método "Primeiro a Entrar, Primeiro a Sair" serve para:</p>
+<input type="radio" name="q16" value="A">A) Evitar o prazo de validade expirado e má conservação.<br>
+<input type="radio" name="q16" value="B">B) Gastar o material mais caro primeiro.<br>
+<input type="radio" name="q16" value="C">C) Organizar o armazém por cores.<br>
+<input type="radio" name="q16" value="D">D) Dar prioridade aos chefes.
+</div>
+
+<div class="question">
+<p>17. O formulário "Requisição de Fundos" deve ser acompanhado por:</p>
+<input type="radio" name="q17" value="A">A) Uma promessa de pagamento.<br>
+<input type="radio" name="q17" value="B">B) Justificação da despesa e orçamento/cotação (se aplicável).<br>
+<input type="radio" name="q17" value="C">C) Uma carta de recomendação.<br>
+<input type="radio" name="q17" value="D">D) Dinheiro vivo.
+</div>
+
+<div class="question">
+<p>18. Quem é a autoridade máxima que aprova o "Plano Anual de Actividades e Orçamento"?</p>
+<input type="radio" name="q18" value="A">A) O Secretário.<br>
+<input type="radio" name="q18" value="B">B) O Conselho Directivo/Assembleia Geral (Órgãos de Governação).<br>
+<input type="radio" name="q18" value="C">C) O Oficial de RH.<br>
+<input type="radio" name="q18" value="D">D) O Banco.
+</div>
+
+<div class="question">
+<p>19. O "Relatório de Incidente"  deve ser preenchido em caso de:</p>
+<input type="radio" name="q19" value="A">A) Promoção por mérito.<br>
+<input type="radio" name="q19" value="B">B) Acidentes de trabalho, furtos ou danos em bens da organização.<br>
+<input type="radio" name="q19" value="C">C) Receção de novos equipamentos.<br>
+<input type="radio" name="q19" value="D">D) Reunião de rotina com a equipa.
+</div>
+
+<div class="question">
+<p>20. No final do manual , o centro de desenvolvimento pessoal responsável pelo documento é o:</p>
+<input type="radio" name="q20" value="A">A) Grow Up.<br>
+<input type="radio" name="q20" value="B">B) ASAC Internacional.<br>
+<input type="radio" name="q20" value="C">C) Instituto de RH.<br>
+<input type="radio" name="q20" value="D">D) Ministério do Trabalho.
+</div>
+
+<button type="button" onclick="corrigir()">Submeter Exame</button>
+
+</form>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+let tempo = 40 * 60;
+
+let timer = setInterval(function(){
+
+let minutos = Math.floor(tempo/60);
+let segundos = tempo%60;
+
+if(segundos < 10){
+segundos = "0"+segundos;
+}
+
+document.getElementById("tempo").innerHTML = minutos+":"+segundos;
+
+tempo--;
+
+if(tempo < 0){
+clearInterval(timer);
+alert("Tempo terminado!");
+corrigir();
+}
+
+},1000);
+
+function corrigir(){
+
+let respostas = {
+q1:"B",q2:"C",q3:"B",q4:"B",q5:"B",
+q6:"B",q7:"B",q8:"B",q9:"C",q10:"B",
+q11:"B",q12:"B",q13:"B",q14:"B",q15:"B",
+q16:"A",q17:"B",q18:"B",q19:"B",q20:"A"
+};
+
+let pontos = 0;
+
+for(let q in respostas){
+
+let resposta = document.querySelector('input[name="'+q+'"]:checked');
+
+if(resposta && resposta.value === respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML =
+"Resultado: "+pontos+" / 20 Valores";
+
+}
+
+</script>
+
+</body>
+</html>
